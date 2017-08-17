@@ -45,6 +45,7 @@
             <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
             <artifactId>PathfinderAPI</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
 
@@ -52,6 +53,7 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>${spigot.version}</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>

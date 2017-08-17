@@ -1,6 +1,6 @@
 package org.bukkit.pathfinding.goals;
 
-import org.bukkit.pathfinding.Insentient;
+import org.bukkit.entity.Insentient;
 import org.bukkit.pathfinding.PathfinderGoal;
 import org.bukkit.Material;
 import org.bukkit.entity.LivingEntity;

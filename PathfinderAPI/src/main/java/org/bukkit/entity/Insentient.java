@@ -1,7 +1,6 @@
-package org.bukkit.pathfinding;
+package org.bukkit.entity;
 
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.LivingEntity;
+import org.bukkit.pathfinding.*;
 
 /**
  * Created by Yannick on 30.11.2016.

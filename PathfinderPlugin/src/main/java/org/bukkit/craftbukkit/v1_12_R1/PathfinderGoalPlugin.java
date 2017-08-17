@@ -1,6 +1,7 @@
-package org.bukkit;
+package org.bukkit.craftbukkit.v1_12_R1;
 
-import org.bukkit.pathfinding.CraftPathfinderManager;
+import org.bukkit.PathfinderGoalAPI;
+import org.bukkit.craftbukkit.v1_12_R1.pathfinding.CraftPathfinderManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PathfinderGoalPlugin extends JavaPlugin {

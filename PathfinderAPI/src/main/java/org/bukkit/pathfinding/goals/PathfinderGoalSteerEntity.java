@@ -1,11 +1,11 @@
 package org.bukkit.pathfinding.goals;
 
-import org.bukkit.pathfinding.Insentient;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+import org.bukkit.entity.Insentient;
 import org.bukkit.pathfinding.PathfinderGoal;
 import org.bukkit.pathfinding.PathfinderManager;
 import org.bukkit.pathfinding.PathfinderPlayer;
-import org.bukkit.Location;
-import org.bukkit.entity.Player;
 
 public class PathfinderGoalSteerEntity implements PathfinderGoal {
 
