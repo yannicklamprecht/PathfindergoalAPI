@@ -1,4 +1,4 @@
 name: PathfinderAPI
-main: org.bukkit.craftbukkit.PathfinderGoalPlugin
-version: 0.0.1
+main: org.bukkit.craftbukkit.v1_12_R1.PathfinderGoalPlugin
+version: 0.0.2
 author: ysl3000

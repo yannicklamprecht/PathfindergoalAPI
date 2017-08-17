@@ -10,7 +10,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>PathfinderAPI</module>
-        <module>PathfinderPlugin</module>
     </modules>
 
     <properties>
@@ -22,14 +21,9 @@
 
     <profiles>
         <profile>
-            <id>ci</id>
-            <activation>
-                <property>
-                    <name>!debug</name>
-                </property>
-            </activation>
+            <id>Impl</id>
             <modules>
-                <module>PathfinderAPI</module>
+                <module>PathfinderPlugin</module>
             </modules>
         </profile>
     </profiles>
