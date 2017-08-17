@@ -21,4 +21,4 @@ deploy:
 env:
   - ci=true
 script:
-  - mvn --projects PathfinderAPI clean install
+  - mvn -pl :PathfinderAPI clean install
