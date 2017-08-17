@@ -25,8 +25,7 @@
             <id>ci</id>
             <activation>
                 <property>
-                    <name>env.ci</name>
-                    <value>true</value>
+                    <name>!debug</name>
                 </property>
             </activation>
             <modules>
