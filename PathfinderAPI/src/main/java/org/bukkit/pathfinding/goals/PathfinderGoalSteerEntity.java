@@ -1,9 +1,9 @@
-package com.github.ysl3000.pathfindergoalapi.pathfinding.goals;
+package org.bukkit.pathfinding.goals;
 
-import com.github.ysl3000.pathfindergoalapi.pathfinding.Insentient;
-import com.github.ysl3000.pathfindergoalapi.pathfinding.PathfinderGoal;
-import com.github.ysl3000.pathfindergoalapi.pathfinding.PathfinderManager;
-import com.github.ysl3000.pathfindergoalapi.pathfinding.PathfinderPlayer;
+import org.bukkit.pathfinding.Insentient;
+import org.bukkit.pathfinding.PathfinderGoal;
+import org.bukkit.pathfinding.PathfinderManager;
+import org.bukkit.pathfinding.PathfinderPlayer;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 

@@ -1,6 +1,6 @@
-package com.github.ysl3000.pathfindergoalapi.pathfinding.goals;
+package org.bukkit.pathfinding.goals;
 
-import com.github.ysl3000.pathfindergoalapi.pathfinding.PathfinderGoal;
+import org.bukkit.pathfinding.PathfinderGoal;
 
 /**
  * Created by Yannick on 30.11.2016.

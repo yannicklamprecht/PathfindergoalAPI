@@ -1,4 +1,4 @@
-package com.github.ysl3000.pathfindergoalapi.pathfinding;
+package org.bukkit.pathfinding;
 
 import org.bukkit.entity.*;
 

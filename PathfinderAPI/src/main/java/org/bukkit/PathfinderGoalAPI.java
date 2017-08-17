@@ -1,6 +1,6 @@
-package com.github.ysl3000.pathfindergoalapi;
+package org.bukkit;
 
-import com.github.ysl3000.pathfindergoalapi.pathfinding.PathfinderManager;
+import org.bukkit.pathfinding.PathfinderManager;
 
 public class PathfinderGoalAPI {
 

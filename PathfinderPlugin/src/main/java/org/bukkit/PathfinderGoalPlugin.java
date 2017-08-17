@@ -1,6 +1,6 @@
-package com.github.ysl3000.pathfindergoalapi;
+package org.bukkit;
 
-import com.github.ysl3000.pathfindergoalapi.pathfinding.CraftPathfinderManager;
+import org.bukkit.pathfinding.CraftPathfinderManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PathfinderGoalPlugin extends JavaPlugin {
