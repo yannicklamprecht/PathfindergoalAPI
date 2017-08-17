@@ -20,5 +20,20 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <property>
+                    <name>ci</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <modules>
+                <module>PathfinderAPI</module>
+            </modules>
+        </profile>
+    </profiles>
+
 
 </project>

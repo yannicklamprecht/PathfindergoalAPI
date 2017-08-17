@@ -10,8 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>PathfinderPlugin</artifactId>
-
-
     <build>
         <plugins>
             <plugin>
