@@ -90,7 +90,7 @@ public interface Insentient {
     boolean hasPositionChanged();
     /**
      * method gets called when the entity kills another entity
-     * @param livingEntity
+     * @param livingEntity the other entity
      */
     void onEntityKill(LivingEntity livingEntity);
 

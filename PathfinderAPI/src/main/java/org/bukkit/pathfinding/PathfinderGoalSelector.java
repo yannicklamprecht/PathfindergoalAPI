@@ -9,7 +9,7 @@ public interface PathfinderGoalSelector {
 
     /**
      * Add a pathfinder goal to the entity
-     * @param priority
+     * @param priority the priority 0 highest
      * @param goal The goal to add
      */
     void addPathfinderGoal(int priority, PathfinderGoal goal);
