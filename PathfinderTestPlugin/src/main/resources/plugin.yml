@@ -1,0 +1,5 @@
+name: PathfinderAPITest
+main: com.github.ysl3000.bukkit.test.PathfinderTestPlugin
+version: 0.0.3
+author: ysl3000
+depend: [PathfinderAPI]
