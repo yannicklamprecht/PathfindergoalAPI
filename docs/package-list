@@ -1,4 +1,5 @@
-org.bukkit
-org.bukkit.entity
-org.bukkit.pathfinding
-org.bukkit.pathfinding.goals
+com.github.ysl3000.bukkit.pathfinding
+com.github.ysl3000.bukkit.pathfinding.entity
+com.github.ysl3000.bukkit.pathfinding.goals
+com.github.ysl3000.bukkit.pathfinding.goals.notworking
+com.github.ysl3000.bukkit.pathfinding.pathfinding
