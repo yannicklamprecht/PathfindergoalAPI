@@ -12,8 +12,6 @@ import java.util.Optional;
 
 /**
  * Created by ysl3000 on 09.12.16.
- * <p>
- * <p>
  * todo check if working else update
  */
 public class PathfinderGoalWalkToSteakAndEat implements PathfinderGoal {
