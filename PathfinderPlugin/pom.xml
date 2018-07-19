@@ -16,20 +16,14 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
+                <artifactId>maven-shade-plugin</artifactId>
                 <version>2.4.1</version>
-                <configuration>
-                    <!-- get all project dependencies -->
-                    <descriptorRefs>
-                        <descriptorRef>jar-with-dependencies</descriptorRef>
-                    </descriptorRefs>
-                </configuration>
                 <executions>
                     <execution>
                         <id>make-assembly</id>
                         <phase>package</phase>
                         <goals>
-                            <goal>single</goal>
+                            <goal>shade</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -42,19 +36,36 @@
     <dependencies>
 
         <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.13-pre7-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
             <artifactId>PathfinderAPI</artifactId>
             <version>${parent.version}</version>
             <scope>compile</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+            <artifactId>Pathfinder_1_12</artifactId>
+            <version>${parent.version}</version>
+            <scope>compile</scope>
+        </dependency>
 
         <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>${spigot.version}</version>
-            <scope>provided</scope>
+            <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+            <artifactId>Pathfinder_1_13</artifactId>
+            <version>${parent.version}</version>
+            <scope>compile</scope>
         </dependency>
+
+
+
+
 
     </dependencies>
 

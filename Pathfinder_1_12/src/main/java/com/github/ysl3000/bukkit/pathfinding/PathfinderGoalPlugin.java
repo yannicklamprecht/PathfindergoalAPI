@@ -17,10 +17,6 @@ public class PathfinderGoalPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
 
-
-
-
-
         this.craftPathfinderManager = new CraftPathfinderManager();
         PathfinderGoalAPI.setApi(this.craftPathfinderManager);
 

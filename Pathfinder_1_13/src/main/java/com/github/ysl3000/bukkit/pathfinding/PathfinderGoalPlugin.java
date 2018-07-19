@@ -1,6 +1,6 @@
 package com.github.ysl3000.bukkit.pathfinding;
 
-import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_12_R1.pathfinding.CraftPathfinderManager;
+import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R1.pathfinding.CraftPathfinderManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class PathfinderGoalPlugin extends JavaPlugin {
@@ -16,10 +16,6 @@ public class PathfinderGoalPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
-
-
-
 
         this.craftPathfinderManager = new CraftPathfinderManager();
         PathfinderGoalAPI.setApi(this.craftPathfinderManager);
