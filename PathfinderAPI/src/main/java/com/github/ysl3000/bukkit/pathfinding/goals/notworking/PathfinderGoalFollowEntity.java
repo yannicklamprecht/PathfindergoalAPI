@@ -22,11 +22,11 @@ public class PathfinderGoalFollowEntity implements PathfinderGoal {
 
     @Override
     public boolean shouldExecute() {
-        return shouldContinueUpdating();
+        return shouldTerminate();
     }
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return distance() >= moveRadius;
     }
 

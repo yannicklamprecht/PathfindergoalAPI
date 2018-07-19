@@ -28,7 +28,7 @@ public class PathfinderGoalSteerEntity implements PathfinderGoal {
     }
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return getSteeringPlayer().isPresent();
     }
 

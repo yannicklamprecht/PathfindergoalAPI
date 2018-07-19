@@ -19,6 +19,7 @@ public class PathfinderGoalPlugin extends JavaPlugin {
 
 
 
+        // TODO version version differentiation
 
 
         this.craftPathfinderManager = new CraftPathfinderManager();

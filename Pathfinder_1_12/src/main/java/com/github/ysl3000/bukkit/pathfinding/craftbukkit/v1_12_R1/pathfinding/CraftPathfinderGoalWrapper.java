@@ -22,7 +22,7 @@ public class CraftPathfinderGoalWrapper extends PathfinderGoal {
 
     @Override
     public boolean b() {
-        return pathfinderGoal.shouldContinueUpdating();
+        return pathfinderGoal.shouldTerminate();
     }
 
     @Override

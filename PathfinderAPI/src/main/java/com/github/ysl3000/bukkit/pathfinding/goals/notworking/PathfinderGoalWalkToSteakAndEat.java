@@ -35,7 +35,7 @@ public class PathfinderGoalWalkToSteakAndEat implements PathfinderGoal {
     }
 
     @Override // if false -> reset ELSE execute
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return target == null || !target.isDead();
     }
 

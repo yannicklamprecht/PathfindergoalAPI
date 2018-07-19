@@ -30,7 +30,7 @@ public class PathfinderGoalReturnToLocation implements PathfinderGoal {
     }
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return !navigation.isDoneNavigating();
     }
 

@@ -34,7 +34,7 @@ public class PathfinderGoalMoveToLocation implements PathfinderGoal {
 
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return this.isAlreadySet = !this.pathfinderGoalEntity.getNavigation().isDoneNavigating();
     }
 

@@ -42,7 +42,7 @@ public class PathfinderGoalGimmiCookie implements PathfinderGoal {
     }
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return !hasGivenCookie;
     }
 

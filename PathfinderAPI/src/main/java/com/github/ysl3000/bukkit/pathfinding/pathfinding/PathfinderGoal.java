@@ -17,7 +17,7 @@ public interface PathfinderGoal {
      *
      * @return true if should terminate
      */
-    boolean shouldContinueUpdating();
+    boolean shouldTerminate();
 
     /**
      * Runs initially and should be used to setUp goalEnvironment

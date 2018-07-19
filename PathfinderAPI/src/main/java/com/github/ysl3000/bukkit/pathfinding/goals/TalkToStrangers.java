@@ -39,7 +39,7 @@ public class TalkToStrangers implements PathfinderGoal {
 
 
     @Override
-    public boolean shouldContinueUpdating() {
+    public boolean shouldTerminate() {
         return currentMessage.hasNext();
     }
 
