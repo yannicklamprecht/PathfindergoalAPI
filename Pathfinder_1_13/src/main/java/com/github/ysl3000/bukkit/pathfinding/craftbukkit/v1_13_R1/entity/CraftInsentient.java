@@ -21,7 +21,7 @@ public class CraftInsentient implements Insentient {
     static {
 
         try {
-            reset = EntityInsentient.class.getDeclaredMethod("r");
+            reset = EntityInsentient.class.getDeclaredMethod("n");
             reset.setAccessible(true);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
