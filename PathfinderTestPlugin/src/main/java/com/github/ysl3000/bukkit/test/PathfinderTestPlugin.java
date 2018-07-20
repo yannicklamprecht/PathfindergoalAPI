@@ -46,12 +46,9 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent event) {
 
-
         Player player = event.getPlayer();
 
-
         List<String> args = Arrays.asList(event.getMessage().split(" "));
-
 
         if (args.size() > 0) {
 
@@ -73,16 +70,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
                     iCommand.execute(player, finalParam);
 
             });
-
-
         }
-
-
-    }
-
-    private void addGoal() {
-
-
     }
 
     private class Chat implements ICommand {
@@ -106,7 +94,6 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
                 pathfinderGoalSelector.clearGoals();
 
                 pathfinderGoalSelector.addPathfinderGoal(0, new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
-
             }
             return true;
         }
@@ -131,12 +118,9 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
                 pathfinderGoalSelector.clearGoals();
 
                 pathfinderGoalSelector.addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
-
             }
 
             return true;
-
-
         }
     }
 
@@ -151,7 +135,6 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         @Override
         public boolean execute(Player player, List<String> args) {
 
-
             Creature creature = player.getWorld().spawn(player.getLocation(), Zombie.class);
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
 
@@ -163,10 +146,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
                                 pathfinderGoalEntity, new Location(player.getWorld(), 235, 70, 246),
                                 2, 0)
                 );
-
             }
-
-
             return true;
         }
     }
