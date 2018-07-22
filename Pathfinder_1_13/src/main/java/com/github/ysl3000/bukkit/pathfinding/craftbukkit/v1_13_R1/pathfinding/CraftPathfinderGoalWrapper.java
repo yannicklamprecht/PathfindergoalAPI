@@ -9,6 +9,20 @@ import net.minecraft.server.v1_13_R1.PathfinderGoal;
  */
 public class CraftPathfinderGoalWrapper extends PathfinderGoal {
 
+
+    /*
+
+        goal setup
+        1. shouldInitExecute and -> initExecute -> reset
+        2. should not execute -> reset
+        goal tick
+        3. move
+
+
+
+     */
+
+
     private com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal pathfinderGoal;
 
     public CraftPathfinderGoalWrapper(com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal pathfinderGoal) {
@@ -17,12 +31,13 @@ public class CraftPathfinderGoalWrapper extends PathfinderGoal {
 
     @Override
     public boolean a() {
-        return pathfinderGoal.shouldExecute();
+        return pathfinderGoal.shouldTerminate();
+
     }
 
     @Override
     public boolean b() {
-        return pathfinderGoal.shouldTerminate();
+        return pathfinderGoal.shouldExecute();
     }
 
     @Override
@@ -33,7 +48,7 @@ public class CraftPathfinderGoalWrapper extends PathfinderGoal {
 
     @Override
     public void d() {
-        // onFinish
+        // reset
         pathfinderGoal.reset();
     }
 

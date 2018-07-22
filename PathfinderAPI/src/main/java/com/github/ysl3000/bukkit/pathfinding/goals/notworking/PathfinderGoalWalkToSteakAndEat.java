@@ -29,52 +29,59 @@ public class PathfinderGoalWalkToSteakAndEat implements PathfinderGoal {
     }
 
 
-    @Override // if not in Use -> shouldExecute | if true -> set inUse=true & init() & execute()
+    @Override
     public boolean shouldExecute() {
-        return target == null || distanceComperator.getDistance(target) > 0;
+        return target != null && !target.isDead() && distanceComperator.getDistance(target) > 0;
     }
 
-    @Override // if false -> reset ELSE execute
+    /**
+     * Whether the goal should Terminate
+     *
+     * @return true if should terminate
+     */
+    @Override
     public boolean shouldTerminate() {
-        return target == null || !target.isDead();
+        return target == null;
     }
 
+    /**
+     * Runs initially and should be used to setUp goalEnvironment
+     * Condition needs to be defined thus your code in it isn't called
+     */
     @Override
     public void init() {
         Optional<Entity> nearestStack = pathfinderGoalEntity.getBukkitEntity().getNearbyEntities(distance, distance, distance).stream().filter(e -> e.getType() == EntityType.DROPPED_ITEM).min(distanceComperator);
 
-
         nearestStack.ifPresent(entity -> target = entity);
-
+        execute();
     }
 
+    /**
+     * Is called when {@link #shouldExecute()} returns true
+     */
     @Override
     public void execute() {
-        if (target != null) {
-            pathfinderGoalEntity.getControllerJump().jump();
-            pathfinderGoalEntity.getNavigation().moveTo(target, 2);
-
-            if (this.target != null) {
-                if (this.target instanceof Item) {
-                    Entity buEntity = this.pathfinderGoalEntity.getBukkitEntity();
-                    if (buEntity instanceof LivingEntity)
-
-                        ((LivingEntity) buEntity).getEquipment().setItemInMainHand(((Item) this.target).getItemStack());
-                    this.target.remove();
-                }
-            }
-
-
-        }
+        pathfinderGoalEntity.getNavigation().moveTo(target, 2);
+        pathfinderGoalEntity.getControllerJump().jump();
     }
+
 
     @Override
     public void reset() {
+
         this.pathfinderGoalEntity.getNavigation().clearPathEntity();
-        this.target = null;
 
+        if (this.target != null) {
+            if (this.target instanceof Item) {
+                Entity buEntity = this.pathfinderGoalEntity.getBukkitEntity();
+                if (buEntity instanceof LivingEntity)
+
+                    ((LivingEntity) buEntity).getEquipment().setItemInMainHand(((Item) this.target).getItemStack());
+                this.target.remove();
+                this.target = null;
+            }
+        }
     }
-
 
     private class DistanceComperator implements Comparator<Entity> {
 

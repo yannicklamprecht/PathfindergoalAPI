@@ -44,7 +44,7 @@ public class CraftNavigation implements Navigation {
 
     @Override
     public boolean isDoneNavigating() {
-        return !navigationAbstract.q();
+        return navigationAbstract.p();
     }
 
 
@@ -64,7 +64,7 @@ public class CraftNavigation implements Navigation {
      */
     @Override
     public float getPathSearchRange() {
-        return navigationAbstract.k();
+        return navigationAbstract.j();
     }
 
 }

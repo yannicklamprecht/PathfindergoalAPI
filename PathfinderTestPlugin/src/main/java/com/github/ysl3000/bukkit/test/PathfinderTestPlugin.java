@@ -92,6 +92,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             if (pathfinderGoalEntity != null) {
                 PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
                 pathfinderGoalSelector.clearGoals();
+                pathfinderGoalEntity.getTargetSelector().clearGoals();
 
                 pathfinderGoalSelector.addPathfinderGoal(0, new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
             }
@@ -116,6 +117,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             if (pathfinderGoalEntity != null) {
                 PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
                 pathfinderGoalSelector.clearGoals();
+                pathfinderGoalEntity.getTargetSelector().clearGoals();
 
                 pathfinderGoalSelector.addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
             }
@@ -141,6 +143,8 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             if (pathfinderGoalEntity != null) {
                 PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
                 pathfinderGoalSelector.clearGoals();
+                pathfinderGoalEntity.getTargetSelector().clearGoals();
+
                 pathfinderGoalSelector.addPathfinderGoal(0,
                         new PathfinderGoalMoveToLocation(
                                 pathfinderGoalEntity, new Location(player.getWorld(), 235, 70, 246),
