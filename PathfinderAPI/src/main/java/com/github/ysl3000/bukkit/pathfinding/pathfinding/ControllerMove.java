@@ -1,5 +1,6 @@
 package com.github.ysl3000.bukkit.pathfinding.pathfinding;
 
+@Deprecated
 public interface ControllerMove {
 
     boolean isOperationMove();

@@ -5,6 +5,7 @@ import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
 import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalGimmiCookie;
 import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalMoveToLocation;
 import com.github.ysl3000.bukkit.pathfinding.goals.TalkToStrangers;
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager;
 import org.bukkit.Bukkit;
@@ -38,6 +39,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         commandMap.put("chat", new Chat(pathfinderManager));
         commandMap.put("cookie", new DeliverCookie(pathfinderManager));
         commandMap.put("move", new MoveToLocation(pathfinderManager));
+        commandMap.put("print", new PrintGoal(pathfinderManager));
 
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
     }
@@ -155,4 +157,96 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
     }
 
+    private class PrintGoal implements ICommand {
+        private final PathfinderManager pathfinderManager;
+
+        public PrintGoal(PathfinderManager pathfinderManager) {
+
+            this.pathfinderManager = pathfinderManager;
+        }
+
+        @Override
+        public boolean execute(Player p, List<String> args) {
+            Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class,zombie -> {
+                Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(zombie);
+
+                if (pathfinderGoalEntity != null) {
+                    PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
+                    pathfinderGoalEntity.getTargetSelector().clearGoals();
+                    pathfinderGoalSelector.clearGoals();
+
+                    pathfinderGoalSelector.addPathfinderGoal(0,
+                            new PathfinderGoalPrint()
+                    );
+                }
+
+
+            });
+
+            return true;
+        }
+
+        private class PathfinderGoalPrint implements PathfinderGoal {
+
+            private boolean shE = true;
+            private boolean shT = true;
+
+            /**
+             * Whether the pathfinder goal should commence execution or not
+             *
+             * @return true if should execute
+             */
+            @Override
+            public boolean shouldExecute() {
+
+                System.out.println("called should execute");
+
+                return shE = !shE;
+            }
+
+            /**
+             * Whether the goal should Terminate
+             *
+             * @return true if should terminate
+             */
+            @Override
+            public boolean shouldTerminate() {
+                System.out.println("Called should terminate");
+                return shT = !shT;
+            }
+
+            /**
+             * Runs initially and should be used to setUp goalEnvironment
+             * Condition needs to be defined thus your code in it isn't called
+             */
+            @Override
+            public void init() {
+
+                System.out.println("Called Init");
+
+            }
+
+            /**
+             * Is called when {@link #shouldExecute()} returns true
+             */
+            @Override
+            public void execute() {
+
+                System.out.println("Called execute");
+
+            }
+
+            /**
+             * Reset the pathfinder AI pack to its initial state
+             * <p>
+             * Is called when {@link #shouldExecute()} returns false
+             */
+            @Override
+            public void reset() {
+
+                System.out.println("Called reset");
+
+            }
+        }
+    }
 }

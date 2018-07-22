@@ -54,12 +54,12 @@ public class CraftPathfinderPlayer implements PathfinderPlayer {
 
     @Override
     public float getMotionForward() {
-        return entityPlayer.bi;
+        return entityPlayer.bh;
     }
 
     @Override
     public float getMotionSideward() {
-        return entityPlayer.bh;
+        return entityPlayer.bj;
     }
 
     @Override

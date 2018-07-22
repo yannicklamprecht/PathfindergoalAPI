@@ -10,11 +10,9 @@ public class PathfinderGoalFollowEntity implements PathfinderGoal {
 
     private final LivingEntity entity;
     private final double moveRadius;
-    private boolean isAlreadySet;
     private Insentient pathfinderGoalEntity;
     private double walkspeed;
 
-    private boolean changedMoved = false;
 
     public PathfinderGoalFollowEntity(Insentient pathfinderGoalEntity, LivingEntity entity, double moveRadius, double walkspeed) {
         this.entity = entity;
@@ -25,7 +23,7 @@ public class PathfinderGoalFollowEntity implements PathfinderGoal {
 
     @Override
     public boolean shouldExecute() {
-        return this.isAlreadySet = !this.pathfinderGoalEntity.getNavigation().isDoneNavigating();
+        return !this.pathfinderGoalEntity.getNavigation().isDoneNavigating();
     }
 
     /**
@@ -35,8 +33,7 @@ public class PathfinderGoalFollowEntity implements PathfinderGoal {
      */
     @Override
     public boolean shouldTerminate() {
-        if (this.isAlreadySet) return false;
-        return this.pathfinderGoalEntity.getBukkitEntity().getLocation().distance(this.entity.getLocation()) > this.moveRadius;
+        return pathfinderGoalEntity.getNavigation().isDoneNavigating() || this.pathfinderGoalEntity.getBukkitEntity().getLocation().distance(this.entity.getLocation()) > this.moveRadius;
     }
 
     /**
@@ -57,9 +54,7 @@ public class PathfinderGoalFollowEntity implements PathfinderGoal {
     }
 
     public void reset() {
-        if (!this.isAlreadySet) {
-            this.pathfinderGoalEntity.getNavigation().moveTo(this.entity, walkspeed);
-        }
+        this.pathfinderGoalEntity.getNavigation().moveTo(this.entity, walkspeed);
     }
 
     public void move() {

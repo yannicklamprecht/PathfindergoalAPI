@@ -1,13 +1,58 @@
 package com.github.ysl3000.bukkit.pathfinding.entity;
 
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.*;
+import org.bukkit.Location;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.util.Vector;
 
 /**
  * Created by Yannick on 30.11.2016.
  */
 public interface Insentient {
+
+
+    void addPathfinderGoal(int priority, PathfinderGoal pathfinderGoal);
+
+    void removePathfinderGoal(PathfinderGoal pathfinderGoal);
+
+    boolean hasPathfinderGoal(PathfinderGoal pathfinderGoal);
+
+    void clearPathfinderGoals();
+
+    void addTargetPathfinderGoal(int priority, PathfinderGoal pathfinderGoal);
+
+    void removeTargetPathfinderGoal(PathfinderGoal pathfinderGoal);
+
+    boolean hasTargetPathfinderGoal(PathfinderGoal pathfinderGoal);
+
+    void clearTargetPathfinderGoals();
+
+
+    void jump();
+
+
+    /**
+     * The entity will look to the given location
+     *
+     * @param location the entity should look to
+     */
+    void lookAt(Location location);
+
+    /**
+     * The entity will look to the given entity
+     *
+     * @param entity the entity which is targeted with eyes
+     */
+    void lookAt(Entity entity);
+
+    Location getLookingAt();
+
+
+    void setMovementDirection(Vector direction, double speed);
+
+    void setStrafeDirection(float forward, float sideward);
+
 
     /**
      * Will return the PathfinderGoalTargetSelector
@@ -15,6 +60,7 @@ public interface Insentient {
      * @return targetSelector
      */
     PathfinderGoalSelector getTargetSelector();
+
     /**
      * Will return the PathfinderGoalSelector
      *
@@ -24,7 +70,6 @@ public interface Insentient {
 
     /**
      * Will reset goals to default one
-     *
      */
     void resetGoalsToDefault();
 
@@ -34,6 +79,7 @@ public interface Insentient {
      * @return controllerJump to let the entity jump
      */
     ControllerJump getControllerJump();
+
     /**
      * Get the ControllerLook for looking
      *
@@ -80,18 +126,16 @@ public interface Insentient {
     int getDefaultPitch();
 
 
-
-
-
-
     /**
      * Will return if entity changed position
      *
      * @return true if positionchange happened after last call
      */
     boolean hasPositionChanged();
+
     /**
      * method gets called when the entity kills another entity
+     *
      * @param livingEntity the other entity
      */
     void onEntityKill(LivingEntity livingEntity);
@@ -104,31 +148,35 @@ public interface Insentient {
     Entity getBukkitEntity();
 
 
-
     /**
+     * @deprecated use {@link Insentient#setMovementDirection(Vector, double)}
      * Will move the Entity relative
-     * @param motionX relative motionX
-     * @param motionY relative motionY
-     * @param motionZ relative motionZ
-     */
-    void moveRelative(double motionX, double motionY ,double motionZ);
-
-
-    /**
-     * Will move the Entity relative
-     * @param motionX relative motionX
-     * @param motionY relative motionY
-     * @param motionZ relative motionZ
-     * @param speed the speed multiplier
-     */
-    void moveRelative(double motionX, double motionY ,double motionZ, double speed);
-
-
-    /**
      *
+     * @param motionX relative motionX
+     * @param motionY relative motionY
+     * @param motionZ relative motionZ
+     */
+    @Deprecated
+    void moveRelative(double motionX, double motionY, double motionZ);
+
+
+    /**
+     * @deprecated use {@link Insentient#setMovementDirection(Vector, double)}
+     * Will move the Entity relative
+     *
+     * @param motionX relative motionX
+     * @param motionY relative motionY
+     * @param motionZ relative motionZ
+     * @param speed   the speed multiplier
+     */
+    @Deprecated
+    void moveRelative(double motionX, double motionY, double motionZ, double speed);
+
+
+    /**
      * Rotates the entity
      *
-     * @param yaw  absolute yaw
+     * @param yaw   absolute yaw
      * @param pitch absolute pitch
      */
     void setRotation(float yaw, float pitch);

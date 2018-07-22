@@ -1,16 +1,16 @@
 package com.github.ysl3000.bukkit.pathfinding.pathfinding;
 
+import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
+
 /**
+ * Use
+ * @Deprecation  {{@link Insentient#jump()}}
  * Created by Yannick on 30.11.2016.
  */
+@Deprecated
 public interface ControllerJump {
     /**
      * Lets the entity jump
      */
     void jump();
-
-    /**
-     * Sets whether the entity should jump all time (don't know what it does)
-     */
-    void setJumping();
 }

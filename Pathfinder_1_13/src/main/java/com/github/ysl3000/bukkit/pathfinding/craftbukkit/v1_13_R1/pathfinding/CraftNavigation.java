@@ -53,7 +53,7 @@ public class CraftNavigation implements Navigation {
      */
     @Override
     public void clearPathEntity() {
-        navigationAbstract.m();
+        navigationAbstract.p();
     }
 
 
