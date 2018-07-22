@@ -6,7 +6,6 @@ import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalGimmiCookie;
 import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalMoveToLocation;
 import com.github.ysl3000.bukkit.pathfinding.goals.TalkToStrangers;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -92,11 +91,9 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
 
             if (pathfinderGoalEntity != null) {
-                PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
-                pathfinderGoalSelector.clearGoals();
-                pathfinderGoalEntity.getTargetSelector().clearGoals();
-
-                pathfinderGoalSelector.addPathfinderGoal(0, new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
+                pathfinderGoalEntity.clearPathfinderGoals();
+                pathfinderGoalEntity.clearTargetPathfinderGoals();
+                pathfinderGoalEntity.addPathfinderGoal(0, new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
             }
             return true;
         }
@@ -117,11 +114,9 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
 
             if (pathfinderGoalEntity != null) {
-                PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
-                pathfinderGoalSelector.clearGoals();
-                pathfinderGoalEntity.getTargetSelector().clearGoals();
-
-                pathfinderGoalSelector.addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
+                pathfinderGoalEntity.clearPathfinderGoals();
+                pathfinderGoalEntity.clearTargetPathfinderGoals();
+                pathfinderGoalEntity.addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
             }
 
             return true;
@@ -139,20 +134,19 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         @Override
         public boolean execute(Player player, List<String> args) {
 
-            Creature creature = player.getWorld().spawn(player.getLocation(), Zombie.class);
+            Zombie creature=player.getWorld().spawn(player.getLocation(), Zombie.class);
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
-
             if (pathfinderGoalEntity != null) {
-                PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
-                pathfinderGoalSelector.clearGoals();
-                pathfinderGoalEntity.getTargetSelector().clearGoals();
-
-                pathfinderGoalSelector.addPathfinderGoal(0,
+                pathfinderGoalEntity.clearPathfinderGoals();
+                pathfinderGoalEntity.clearTargetPathfinderGoals();
+                pathfinderGoalEntity.addPathfinderGoal(0,
                         new PathfinderGoalMoveToLocation(
                                 pathfinderGoalEntity, new Location(player.getWorld(), 235, 70, 246),
                                 2, 0)
                 );
             }
+
+
             return true;
         }
     }
@@ -161,27 +155,22 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         private final PathfinderManager pathfinderManager;
 
         public PrintGoal(PathfinderManager pathfinderManager) {
-
             this.pathfinderManager = pathfinderManager;
         }
 
         @Override
         public boolean execute(Player p, List<String> args) {
-            Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class,zombie -> {
-                Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(zombie);
+            Creature creature =p.getWorld().spawn(p.getLocation(), Zombie.class);
 
-                if (pathfinderGoalEntity != null) {
-                    PathfinderGoalSelector pathfinderGoalSelector = pathfinderGoalEntity.getGoalSelector();
-                    pathfinderGoalEntity.getTargetSelector().clearGoals();
-                    pathfinderGoalSelector.clearGoals();
+            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
+            if (pathfinderGoalEntity != null) {
+                pathfinderGoalEntity.clearPathfinderGoals();
+                pathfinderGoalEntity.clearTargetPathfinderGoals();
+                pathfinderGoalEntity.addPathfinderGoal(0,
+                        new PathfinderGoalPrint()
+                );
+            }
 
-                    pathfinderGoalSelector.addPathfinderGoal(0,
-                            new PathfinderGoalPrint()
-                    );
-                }
-
-
-            });
 
             return true;
         }
@@ -191,61 +180,31 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             private boolean shE = true;
             private boolean shT = true;
 
-            /**
-             * Whether the pathfinder goal should commence execution or not
-             *
-             * @return true if should execute
-             */
             @Override
             public boolean shouldExecute() {
-
                 System.out.println("called should execute");
-
                 return shE = !shE;
             }
 
-            /**
-             * Whether the goal should Terminate
-             *
-             * @return true if should terminate
-             */
             @Override
             public boolean shouldTerminate() {
                 System.out.println("Called should terminate");
                 return shT = !shT;
             }
 
-            /**
-             * Runs initially and should be used to setUp goalEnvironment
-             * Condition needs to be defined thus your code in it isn't called
-             */
             @Override
             public void init() {
-
                 System.out.println("Called Init");
-
             }
 
-            /**
-             * Is called when {@link #shouldExecute()} returns true
-             */
             @Override
             public void execute() {
-
                 System.out.println("Called execute");
-
             }
 
-            /**
-             * Reset the pathfinder AI pack to its initial state
-             * <p>
-             * Is called when {@link #shouldExecute()} returns false
-             */
             @Override
             public void reset() {
-
                 System.out.println("Called reset");
-
             }
         }
     }

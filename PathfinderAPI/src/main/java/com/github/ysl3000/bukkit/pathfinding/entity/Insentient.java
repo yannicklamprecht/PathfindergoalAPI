@@ -55,10 +55,12 @@ public interface Insentient {
 
 
     /**
+     * 
      * Will return the PathfinderGoalTargetSelector
      *
      * @return targetSelector
      */
+    @Deprecated
     PathfinderGoalSelector getTargetSelector();
 
     /**
@@ -66,6 +68,7 @@ public interface Insentient {
      *
      * @return selector
      */
+    @Deprecated
     PathfinderGoalSelector getGoalSelector();
 
     /**
