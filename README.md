@@ -1,3 +1,4 @@
-# PathfindergoalAPI [![Build Status Release](https://travis-ci.org/yannicklamprecht/PathfindergoalAPI.svg?branch=release)]() [![Build Status](https://travis-ci.org/yannicklamprecht/PathfindergoalAPI.svg?branch=master)]()
+# PathfindergoalAPI [![Buidl Status](https://img.shields.io/travis/yannicklamprecht/PathfindergoalAPI/release.svg?label=Release)]() [![Buidl Status](https://img.shields.io/travis/yannicklamprecht/PathfindergoalAPI/master.svg?label=Master)]()
+
 
 This API allows the creation and usage of custompathfindergoals. It's licensed under MIT. Feel free to commit your own pathfindergoals.
