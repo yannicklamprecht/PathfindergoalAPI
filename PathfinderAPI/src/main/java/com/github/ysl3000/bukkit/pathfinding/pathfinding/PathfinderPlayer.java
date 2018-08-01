@@ -3,33 +3,32 @@ package com.github.ysl3000.bukkit.pathfinding.pathfinding;
 import org.bukkit.entity.Player;
 
 /**
- *
- * The PathfinderPlayer grants access to functionality needed for PathfinderEntities
- * e.g. get the relative Motion of the player
- *
+ * The PathfinderPlayer grants access to functionality needed for PathfinderEntities e.g. get the
+ * relative Motion of the player
  */
 public interface PathfinderPlayer {
 
-    /**
-     *
-     * Returns the Bukkit Player
-     *
-     * @return Bukkit Player
-     */
-    Player getPlayer();
+  /**
+   * Returns the Bukkit Player
+   *
+   * @return Bukkit Player
+   */
+  Player getPlayer();
 
-    double getRelativeMotionX();
-    double getRelativeMotionY();
-    double getRelativeMotionZ();
+  double getRelativeMotionX();
 
-    float getRelativeMotionYaw();
+  double getRelativeMotionY();
 
-    float getRelativeMotionPitch();
+  double getRelativeMotionZ();
 
-    float getMotionForward();
+  float getRelativeMotionYaw();
 
-    float getMotionSideward();
+  float getRelativeMotionPitch();
 
-    boolean isJumping();
+  float getMotionForward();
+
+  float getMotionSideward();
+
+  boolean isJumping();
 
 }
