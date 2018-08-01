@@ -11,6 +11,7 @@ deploy:
   file:
   - "./PathfinderAPI/target/PathfinderAPI.jar"
   - "./PathfinderAPI/target/PathfinderAPI-sources.jar"
+  - "./PathfinderTestPlugin/target/PathfinderTestPlugin.jar"
   skip_cleanup: true
   on:
     tags: true
