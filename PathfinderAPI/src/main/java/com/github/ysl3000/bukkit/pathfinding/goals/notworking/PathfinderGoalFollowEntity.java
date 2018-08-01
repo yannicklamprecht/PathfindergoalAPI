@@ -1,56 +1,69 @@
 package com.github.ysl3000.bukkit.pathfinding.goals.notworking;
 
+import org.bukkit.Material;
+import org.bukkit.entity.LivingEntity;
+
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
-import org.bukkit.entity.Creature;
-import org.bukkit.entity.LivingEntity;
 
 public class PathfinderGoalFollowEntity implements PathfinderGoal {
 
 
-    private final LivingEntity entity;
-    private final double moveRadius;
-    private Creature creature;
-    private Insentient pathfinderGoalEntity;
+  private final LivingEntity entity;
+  private final double moveRadius;
+  private Insentient pathfinderGoalEntity;
+  private double walkspeed;
 
-    public PathfinderGoalFollowEntity(Insentient pathfinderGoalEntity, Creature creature, LivingEntity entity, double moveRadius) {
-        this.creature = creature;
-        this.entity = entity;
-        this.moveRadius = moveRadius;
-        this.pathfinderGoalEntity = pathfinderGoalEntity;
-    }
 
-    @Override
-    public boolean shouldExecute() {
-        return shouldContinueUpdating();
-    }
+  public PathfinderGoalFollowEntity(Insentient pathfinderGoalEntity, LivingEntity entity,
+      double moveRadius, double walkspeed) {
+    this.entity = entity;
+    this.moveRadius = moveRadius;
+    this.pathfinderGoalEntity = pathfinderGoalEntity;
+    this.walkspeed = walkspeed;
+  }
 
-    @Override
-    public boolean shouldContinueUpdating() {
-        return distance() >= moveRadius;
-    }
+  @Override
+  public boolean shouldExecute() {
+    return this.pathfinderGoalEntity.getBukkitEntity().getLocation()
+        .distanceSquared(entity.getLocation()) > moveRadius;
+  }
 
-    @Override
-    public void init() {
-        if (creature.getTarget() == null) {
-            this.creature.setTarget(entity);
-            pathfinderGoalEntity.getNavigation().moveTo(this.entity);
-        }
-    }
+  /**
+   * Whether the goal should Terminate
+   *
+   * @return true if should terminate
+   */
+  @Override
+  public boolean shouldTerminate() {
+    return pathfinderGoalEntity.getNavigation().isDoneNavigating() || this.entity.isDead();
+  }
 
-    @Override
-    public void execute() {
-        pathfinderGoalEntity.getControllerJump().jump();
-        if (pathfinderGoalEntity.getNavigation().isDoneNavigating())
-            pathfinderGoalEntity.getNavigation().moveTo(this.entity);
-    }
+  /**
+   * Runs initially and should be used to setUp goalEnvironment Condition needs to be defined thus
+   * your code in it isn't called
+   */
+  @Override
+  public void init() {
 
-    @Override
-    public void reset() {
-    }
+  }
 
-    private double distance() {
-        return creature.getLocation().distanceSquared(this.entity.getLocation());
+  /**
+   * Is called when {@link #shouldExecute()} returns true
+   */
+  @Override
+  public void execute() {
+
+    if (pathfinderGoalEntity.getBukkitEntity().getLocation()
+        .add(pathfinderGoalEntity.getBukkitEntity().getLocation().getDirection().normalize())
+        .getBlock().getType() != Material.AIR) {
+      this.pathfinderGoalEntity.getControllerJump().jump();
     }
+  }
+
+  @Override
+  public void reset() {
+    this.pathfinderGoalEntity.getNavigation().moveTo(this.entity, walkspeed);
+  }
 
 }
