@@ -10,6 +10,7 @@
   <version>1.3-SNAPSHOT</version>
   <modules>
     <module>PathfinderAPI</module>
+    <module>PathfinderTestPlugin</module>
   </modules>
 
   <properties>
@@ -26,7 +27,6 @@
         <module>PathfinderPlugin</module>
         <module>Pathfinder_1_12</module>
         <module>Pathfinder_1_13</module>
-        <module>PathfinderTestPlugin</module>
       </modules>
     </profile>
   </profiles>
