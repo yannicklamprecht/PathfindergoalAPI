@@ -1,4 +1,4 @@
 name: PathfinderAPI
 main: com.github.ysl3000.bukkit.pathfinding.PathfinderGoalPlugin
-version: ${project.version}
+version: 0.0.3
 author: ysl3000

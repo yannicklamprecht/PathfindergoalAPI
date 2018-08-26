@@ -27,9 +27,9 @@
         <module>PathfinderPlugin</module>
         <module>Pathfinder_1_12</module>
         <module>Pathfinder_1_13</module>
+        <module>Pathfinder_1_13_1</module>
       </modules>
     </profile>
   </profiles>
-
 
 </project>
