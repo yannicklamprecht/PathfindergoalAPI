@@ -5,7 +5,7 @@ import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
 /**
  * Use
  *
- * @Deprecation {{@link Insentient#jump()}} Created by Yannick on 30.11.2016.
+ * @deprecated {{@link Insentient#jump()}} Created by Yannick on 30.11.2016.
  */
 @Deprecated
 public interface ControllerJump {

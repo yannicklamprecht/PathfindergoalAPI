@@ -2,3 +2,7 @@
 
 
 This API allows the creation and usage of custompathfindergoals. It's licensed under MIT. Feel free to commit your own pathfindergoals.
+
+# JavaDoc
+
+[Java documentation](https://yannicklamprecht.github.io/PathfindergoalAPI/)

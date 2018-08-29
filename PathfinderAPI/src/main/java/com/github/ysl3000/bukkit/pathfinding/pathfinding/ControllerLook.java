@@ -6,7 +6,7 @@ import org.bukkit.entity.Entity;
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
 
 /**
- * @Deprecation {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient}} Created by Yannick
+ * @deprecated {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient}} Created by Yannick
  * on 30.11.2016.
  */
 @Deprecated
@@ -20,7 +20,7 @@ public interface ControllerLook {
    * @param z z-location
    * @param pitch head rotation pitch
    * @param yaw head rotation yaw
-   * @Deprecation {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Location)}}
+   * @deprecated  {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Location)}}
    *
    * The entity will look to the given coordinates
    */
@@ -31,7 +31,7 @@ public interface ControllerLook {
    * Use
    *
    * @param location the entity should look to
-   * @Deprecation {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Location)}}
+   * @deprecated  {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Location)}}
    *
    * The entity will look to the given location
    */
@@ -44,7 +44,7 @@ public interface ControllerLook {
    * @param entity the entity which is targeted with eyes
    * @param pitch head rotation pitch
    * @param yaw head rotation yaw
-   * @Deprecation {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Entity)}}
+   * @deprecated  {{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient#lookAt(Entity)}}
    * The entity will look to the given entity
    */
   @Deprecated
@@ -68,7 +68,7 @@ public interface ControllerLook {
    * Use
    *
    * @return x-location
-   * @Deprecation {{@link Insentient#getLookingAt()}}
+   * @deprecated  {{@link Insentient#getLookingAt()}}
    *
    * Gets the X-Location the entity is looking to
    */
@@ -79,7 +79,7 @@ public interface ControllerLook {
    * Use
    *
    * @return y-location
-   * @Deprecation {{@link Insentient#getLookingAt()}}
+   * @deprecated  {{@link Insentient#getLookingAt()}}
    *
    * Gets the Y-Location the entity is looking to
    */
@@ -90,7 +90,7 @@ public interface ControllerLook {
    * Use
    *
    * @return z-location
-   * @Deprecation {{@link Insentient#getLookingAt()}}
+   * @deprecated  {{@link Insentient#getLookingAt()}}
    *
    * Gets the Z-Location the entity is looking to
    */
