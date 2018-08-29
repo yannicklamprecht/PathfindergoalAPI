@@ -17,7 +17,6 @@
     <finalName>${project.name}</finalName>
   </build>
 
-
   <dependencies>
     <dependency>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
@@ -33,6 +32,4 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
-
 </project>
