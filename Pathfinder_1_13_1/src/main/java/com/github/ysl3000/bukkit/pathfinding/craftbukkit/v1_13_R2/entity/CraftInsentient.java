@@ -1,34 +1,21 @@
 package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R2.entity;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftAmbient;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftCreature;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftEnderDragon;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftFlying;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.v1_13_R2.entity.CraftSlime;
-import org.bukkit.entity.Ambient;
-import org.bukkit.entity.Creature;
-import org.bukkit.entity.EnderDragon;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.Flying;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Slime;
-import org.bukkit.util.Vector;
-
+import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
 import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R2.pathfinding.CraftNavigation;
 import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R2.pathfinding.CraftPathfinderGoalWrapper;
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
-
 import net.minecraft.server.v1_13_R2.ControllerLook;
 import net.minecraft.server.v1_13_R2.EntityInsentient;
 import net.minecraft.server.v1_13_R2.PathfinderGoal;
 import net.minecraft.server.v1_13_R2.PathfinderGoalSelector;
+import org.bukkit.Location;
+import org.bukkit.craftbukkit.v1_13_R2.entity.*;
+import org.bukkit.entity.*;
+import org.bukkit.util.Vector;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by ysl3000

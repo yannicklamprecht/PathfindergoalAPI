@@ -5,11 +5,11 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>1.3-SNAPSHOT</version>
+    <version>${revision}</version>
   </parent>
 
   <artifactId>PathfinderAPI</artifactId>
-  <version>${parent.version}</version>
+  <version>${revision}</version>
   <modelVersion>4.0.0</modelVersion>
 
   <build>

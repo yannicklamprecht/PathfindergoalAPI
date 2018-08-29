@@ -1,12 +1,12 @@
 package com.github.ysl3000.bukkit.test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-
+import com.github.ysl3000.bukkit.pathfinding.PathfinderGoalAPI;
+import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
+import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalGimmiCookie;
+import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalMoveToLocation;
+import com.github.ysl3000.bukkit.pathfinding.goals.TalkToStrangers;
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Creature;
@@ -17,13 +17,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.ysl3000.bukkit.pathfinding.PathfinderGoalAPI;
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient;
-import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalGimmiCookie;
-import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalMoveToLocation;
-import com.github.ysl3000.bukkit.pathfinding.goals.TalkToStrangers;
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by ysl3000
