@@ -10,6 +10,12 @@
 
   <artifactId>PathfinderAPI</artifactId>
   <version>${revision}</version>
+
+  <properties>
+    <kotlin.version>1.2.61</kotlin.version>
+  </properties>
+
+
   <modelVersion>4.0.0</modelVersion>
 
   <build>
@@ -47,6 +53,30 @@
           <target>8</target>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <artifactId>kotlin-maven-plugin</artifactId>
+        <version>${kotlin.version}</version>
+        <executions>
+          <execution>
+            <id>compile</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>test-compile</id>
+            <phase>test-compile</phase>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <jvmTarget>1.8</jvmTarget>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -75,7 +105,6 @@
       <version>${spigot.version}</version>
       <scope>provided</scope>
     </dependency>
-
   </dependencies>
 
 
