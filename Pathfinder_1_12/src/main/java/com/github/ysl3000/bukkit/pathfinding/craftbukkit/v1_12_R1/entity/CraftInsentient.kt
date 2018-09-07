@@ -109,22 +109,13 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
         handle.controllerJump.a()
     }
 
-    /**
-     * The entity will look to the given location
-     *
-     * @param location the entity should look to
-     */
+
     override fun lookAt(location: Location) {
         handle.controllerLook
                 .a(location.x, location.y, location.z, location.yaw,
                         location.pitch)
     }
 
-    /**
-     * The entity will look to the given entity
-     *
-     * @param entity the entity which is targeted with eyes
-     */
     override fun lookAt(entity: Entity) {
         lookAt(entity.location)
     }
