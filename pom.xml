@@ -11,6 +11,7 @@
     <modules>
         <module>PathfinderAPI</module>
         <module>PathfinderTestPlugin</module>
+		<module>PathfinderTestPluginJava</module>
     </modules>
 
     <properties>
@@ -26,6 +27,7 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
