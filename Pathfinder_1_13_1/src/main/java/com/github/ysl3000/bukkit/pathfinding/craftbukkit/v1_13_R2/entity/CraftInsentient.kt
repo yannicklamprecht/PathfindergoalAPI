@@ -214,9 +214,9 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
         override fun isReset(): Boolean = handle.controllerLook.b()
 
-        override fun getLocationX(): Double = handle.controllerMove.c()
+        override fun getLocationX(): Double = handle.controllerMove.d()
 
-        override fun getLocationY(): Double = handle.controllerMove.d()
+        override fun getLocationY(): Double = handle.controllerMove.e()
 
         override fun getLocationZ(): Double = handle.controllerMove.f()
     }
