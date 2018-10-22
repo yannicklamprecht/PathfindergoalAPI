@@ -12,11 +12,11 @@
     <artifactId>PathfinderPlugin</artifactId>
     <version>${revision}</version>
 
-  <properties>
-    <kotlin.version>1.2.61</kotlin.version>
-  </properties>
+    <properties>
+        <kotlin.version>1.2.61</kotlin.version>
+    </properties>
 
-  <build>
+    <build>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -54,30 +54,30 @@
                     </execution>
                 </executions>
             </plugin>
-          <plugin>
-            <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-maven-plugin</artifactId>
-            <version>${kotlin.version}</version>
-            <executions>
-              <execution>
-                <id>compile</id>
-                <phase>compile</phase>
-                <goals>
-                  <goal>compile</goal>
-                </goals>
-              </execution>
-              <execution>
-                <id>test-compile</id>
-                <phase>test-compile</phase>
-                <goals>
-                  <goal>test-compile</goal>
-                </goals>
-              </execution>
-            </executions>
-            <configuration>
-              <jvmTarget>1.8</jvmTarget>
-            </configuration>
-          </plugin>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
         </plugins>
 
     </build>
@@ -86,7 +86,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.13-R0.1-SNAPSHOT</version>
+            <version>1.13.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
@@ -110,10 +110,9 @@
             <version>${revision}</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-            <artifactId>Pathfinder_1_13_1</artifactId>
+            <artifactId>Pathfinder_1_13_2</artifactId>
             <version>${revision}</version>
             <scope>compile</scope>
         </dependency>

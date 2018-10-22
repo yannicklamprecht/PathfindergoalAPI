@@ -10,14 +10,14 @@
     <version>${revision}</version>
   </parent>
 
-  <artifactId>Pathfinder_1_13_1</artifactId>
+  <artifactId>Pathfinder_1_13_2</artifactId>
   <version>${revision}</version>
 
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot</artifactId>
-      <version>1.13.1-R0.1-SNAPSHOT</version>
+      <version>1.13.2-R0.1-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 
