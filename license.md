@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2017 Yannick Lamprecht
+Copyright (c) 2017-2018 Yannick Lamprecht
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
