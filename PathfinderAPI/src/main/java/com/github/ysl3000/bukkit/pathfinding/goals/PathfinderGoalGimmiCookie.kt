@@ -1,16 +1,13 @@
 package com.github.ysl3000.bukkit.pathfinding.goals
 
-import java.util.Comparator
-import java.util.Optional
-
+import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
 import org.bukkit.Material
 import org.bukkit.entity.Creature
 import org.bukkit.entity.Entity
 import org.bukkit.entity.Player
 import org.bukkit.inventory.ItemStack
-
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import java.util.*
 
 /**
  * Created by 2008Choco
@@ -42,7 +39,7 @@ class PathfinderGoalGimmiCookie(private val pathfinderGoalEntity: Insentient, pr
     override fun init() {
         this.nearestPlayer = getNearestPlayerFrom(nearbyEntities!!).orElse(null)
         this.nearbyEntities = null
-        this.creature.equipment.itemInMainHand = COOKIE
+        this.creature.equipment?.setItemInMainHand(COOKIE)
         this.creature.target = nearestPlayer
         this.pathfinderGoalEntity.getNavigation().moveTo(nearestPlayer!!)
 
@@ -53,7 +50,7 @@ class PathfinderGoalGimmiCookie(private val pathfinderGoalEntity: Insentient, pr
         this.pathfinderGoalEntity.getControllerJump().jump()
         if (creature.location.distanceSquared(nearestPlayer!!.location) <= 1) {
             this.creature.world.dropItem(nearestPlayer!!.location, COOKIE)
-            this.creature.equipment.itemInMainHand = null
+            this.creature.equipment?.setItemInMainHand(null)
             this.isGenerous = false
             this.hasGivenCookie = true
         }

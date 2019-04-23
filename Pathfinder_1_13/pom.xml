@@ -13,10 +13,6 @@
   <artifactId>Pathfinder_1_13</artifactId>
   <version>${revision}</version>
 
-  <properties>
-    <kotlin.version>1.2.61</kotlin.version>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
@@ -41,6 +37,11 @@
       <artifactId>kotlin-test</artifactId>
       <version>${kotlin.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <version>${kotlin.version}</version>
     </dependency>
   </dependencies>
 
