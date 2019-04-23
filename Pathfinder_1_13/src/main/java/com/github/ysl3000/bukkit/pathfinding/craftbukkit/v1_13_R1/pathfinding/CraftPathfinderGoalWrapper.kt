@@ -10,28 +10,15 @@ import net.minecraft.server.v1_13_R1.PathfinderGoal
 class CraftPathfinderGoalWrapper(
         private val pathfinderGoal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) : PathfinderGoal() {
 
-    override fun a(): Boolean {
-        return pathfinderGoal.shouldExecute()
-    }
+    override fun a() = pathfinderGoal.shouldExecute()
 
-    override fun b(): Boolean {
-        return pathfinderGoal.shouldTerminate()
-    }
+    override fun b() = pathfinderGoal.shouldTerminate()
 
-    override fun c() {
-        // setup
-        pathfinderGoal.init()
-    }
+    override fun c() = pathfinderGoal.init()
 
-    override fun d() {
-        // onFinish
-        pathfinderGoal.reset()
-    }
+    override fun d() = pathfinderGoal.reset()
 
-    override fun e() {
-        // executeUpdate
-        pathfinderGoal.execute()
-    }
+    override fun e() = pathfinderGoal.execute()
 }
 
 
