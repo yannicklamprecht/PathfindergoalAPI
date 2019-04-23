@@ -1,15 +1,12 @@
 package com.github.ysl3000.bukkit.pathfinding.goals.notworking
 
-import java.util.Comparator
-import java.util.Optional
-
+import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
 import org.bukkit.entity.Entity
 import org.bukkit.entity.EntityType
 import org.bukkit.entity.Item
 import org.bukkit.entity.LivingEntity
-
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import java.util.*
 
 /**
  * Created by ysl3000 on 09.12.16. todo check if working else update
@@ -62,15 +59,13 @@ class PathfinderGoalWalkToSteakAndEat(private val pathfinderGoalEntity: Insentie
 
         this.pathfinderGoalEntity.getNavigation().clearPathEntity()
 
-        if (this.target != null) {
-            if (this.target is Item) {
-                val buEntity = this.pathfinderGoalEntity.getBukkitEntity()
-                if (buEntity is LivingEntity) {
-                    buEntity.equipment.itemInMainHand = (this.target as Item).itemStack
-                }
-                this.target!!.remove()
-                this.target = null
+        if (this.target != null && this.target is Item) {
+            val buEntity = this.pathfinderGoalEntity.getBukkitEntity()
+            if (buEntity is LivingEntity) {
+                buEntity.equipment?.setItemInMainHand((this.target as Item).itemStack)
             }
+            this.target!!.remove()
+            this.target = null
         }
     }
 

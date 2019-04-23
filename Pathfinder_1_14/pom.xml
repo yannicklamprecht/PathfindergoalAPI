@@ -10,18 +10,14 @@
     <version>${revision}</version>
   </parent>
 
-  <artifactId>Pathfinder_1_13</artifactId>
+  <artifactId>Pathfinder_1_14</artifactId>
   <version>${revision}</version>
-
-  <properties>
-    <kotlin.version>1.3.30</kotlin.version>
-  </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot</artifactId>
-      <version>1.13-R0.1-SNAPSHOT</version>
+      <version>1.14-pre5-SNAPSHOT</version>
       <scope>provided</scope>
     </dependency>
 
