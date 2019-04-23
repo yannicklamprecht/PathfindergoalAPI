@@ -13,10 +13,6 @@
   <artifactId>Pathfinder_1_12</artifactId>
   <version>${revision}</version>
 
-    <properties>
-        <kotlin.version>1.3.30</kotlin.version>
-    </properties>
-
     <dependencies>
 
     <dependency>

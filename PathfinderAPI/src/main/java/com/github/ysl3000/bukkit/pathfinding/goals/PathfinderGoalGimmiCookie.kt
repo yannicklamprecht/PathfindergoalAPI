@@ -12,7 +12,7 @@ import java.util.*
 /**
  * Created by 2008Choco
  */
-class PathfinderGoalGimmiCookie(private val pathfinderGoalEntity: Insentient, private var creature: Creature) : PathfinderGoal {
+class PathfinderGoalGimmiCookie(private val pathfinderGoalEntity: Insentient, private val creature: Creature) : PathfinderGoal {
     private var isGenerous = true
     private var hasGivenCookie = false
     private var nearbyEntities: List<Entity>? = null

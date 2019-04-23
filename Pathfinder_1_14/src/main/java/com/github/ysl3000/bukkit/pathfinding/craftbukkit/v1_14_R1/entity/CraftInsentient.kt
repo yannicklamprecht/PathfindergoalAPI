@@ -237,7 +237,7 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
         init {
 
             try {
-                reset = EntityInsentient::class.java.getDeclaredMethod("n")
+                reset = EntityInsentient::class.java.getDeclaredMethod("initPathfinder")
                 reset!!.isAccessible = true
             } catch (e: NoSuchMethodException) {
                 e.printStackTrace()
