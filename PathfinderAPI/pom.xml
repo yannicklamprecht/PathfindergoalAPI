@@ -13,6 +13,7 @@
 
   <properties>
     <kotlin.version>1.3.30</kotlin.version>
+    <dokka.version>0.9.18</dokka.version>
   </properties>
 
 
@@ -33,16 +34,6 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
-        <configuration>
-          <show>public</show>
-          <nohelp>true</nohelp>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -77,26 +68,26 @@
           <jvmTarget>1.8</jvmTarget>
         </configuration>
       </plugin>
-    </plugins>
-  </build>
-
-  <reporting>
-    <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.0.1</version>
+        <groupId>org.jetbrains.dokka</groupId>
+        <artifactId>dokka-maven-plugin</artifactId>
+        <version>${dokka.version}</version>
+        <executions>
+          <execution>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>dokka</goal>
+            </goals>
+          </execution>
+        </executions>
         <configuration>
-          <includeTransitiveDependencySources>false</includeTransitiveDependencySources>
-          <skip>true</skip>
-          <stylesheetfile>${basedir}/src/main/javadoc/stylesheet.css</stylesheetfile>
-          <show>public</show>
-          <source>1.8</source>
+          <outputDir>${project.basedir}/../docs</outputDir>
+          <skipDeprecated>true</skipDeprecated>
+          <skipEmptyPackages>true</skipEmptyPackages>
         </configuration>
       </plugin>
     </plugins>
-  </reporting>
-
+  </build>
 
   <dependencies>
     <dependency>
@@ -131,4 +122,13 @@
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
   </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jcenter</id>
+      <name>JCenter</name>
+      <url>https://jcenter.bintray.com/</url>
+    </pluginRepository>
+  </pluginRepositories>
+
 </project>
