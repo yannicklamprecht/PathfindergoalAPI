@@ -1,14 +1,11 @@
 package com.github.ysl3000.bukkit.pathfinding.goals.notworking
 
-import java.util.Optional
-
-import org.bukkit.Location
-import org.bukkit.entity.Player
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderPlayer
+import org.bukkit.entity.Player
+import java.util.*
 
 class PathfinderGoalSteerEntity(private val pathfinderManager: PathfinderManager,
                                 private val pathfinderGoalEntity: Insentient) : PathfinderGoal {

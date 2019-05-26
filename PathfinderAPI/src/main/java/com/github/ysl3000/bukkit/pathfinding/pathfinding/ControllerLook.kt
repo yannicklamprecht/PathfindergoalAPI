@@ -3,8 +3,6 @@ package com.github.ysl3000.bukkit.pathfinding.pathfinding
 import org.bukkit.Location
 import org.bukkit.entity.Entity
 
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
-
 
 @Deprecated("{{@link com.github.ysl3000.bukkit.pathfinding.entity.Insentient}} Created by Yannick\n" +
         "  on 30.11.2016.")

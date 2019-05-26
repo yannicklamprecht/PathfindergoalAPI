@@ -1,11 +1,9 @@
 package com.github.ysl3000.bukkit.pathfinding.goals
 
-import java.util.stream.Collectors
-
-import org.bukkit.entity.Player
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import org.bukkit.entity.Player
+import java.util.stream.Collectors
 
 /**
  * Created by ysl3000

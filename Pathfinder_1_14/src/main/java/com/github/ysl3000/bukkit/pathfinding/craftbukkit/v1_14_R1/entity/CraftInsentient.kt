@@ -8,19 +8,8 @@ import net.minecraft.server.v1_14_R1.EntityInsentient
 import net.minecraft.server.v1_14_R1.PathfinderGoal
 import net.minecraft.server.v1_14_R1.PathfinderGoalSelector
 import org.bukkit.Location
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftAmbient
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftCreature
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftEnderDragon
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftFlying
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftLivingEntity
-import org.bukkit.craftbukkit.v1_14_R1.entity.CraftSlime
-import org.bukkit.entity.Ambient
-import org.bukkit.entity.Creature
-import org.bukkit.entity.EnderDragon
-import org.bukkit.entity.Entity
-import org.bukkit.entity.Flying
-import org.bukkit.entity.LivingEntity
-import org.bukkit.entity.Slime
+import org.bukkit.craftbukkit.v1_14_R1.entity.*
+import org.bukkit.entity.*
 import org.bukkit.util.Vector
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
@@ -44,6 +33,8 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
     constructor(enderDragon: EnderDragon) : this((enderDragon as CraftEnderDragon).handle)
 
     constructor(creature: Creature) : this((creature as CraftCreature).handle)
+
+    constructor(mob: Mob) : this((mob as CraftMob).handle)
 
     constructor(ambient: Ambient) : this((ambient as CraftAmbient).handle)
 

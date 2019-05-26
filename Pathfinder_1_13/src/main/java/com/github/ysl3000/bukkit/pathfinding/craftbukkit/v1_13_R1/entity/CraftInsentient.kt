@@ -72,6 +72,8 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     constructor(creature: Creature) : this((creature as CraftCreature).handle)
 
+    constructor(mob: Mob) : this((mob as CraftMob).handle)
+
     constructor(ambient: Ambient) : this((ambient as CraftAmbient).handle)
 
     constructor(slime: Slime) : this((slime as CraftSlime).handle)

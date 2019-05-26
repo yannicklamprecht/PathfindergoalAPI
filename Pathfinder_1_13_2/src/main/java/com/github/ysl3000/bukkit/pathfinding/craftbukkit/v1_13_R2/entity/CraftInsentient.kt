@@ -35,6 +35,8 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     constructor(ambient: Ambient) : this((ambient as CraftAmbient).handle)
 
+    constructor(mob: Mob) : this((mob as CraftMob).handle)
+
     constructor(slime: Slime) : this((slime as CraftSlime).handle)
 
     override fun addPathfinderGoal(priority: Int,

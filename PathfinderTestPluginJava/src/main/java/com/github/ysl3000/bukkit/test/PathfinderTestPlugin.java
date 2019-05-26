@@ -7,6 +7,7 @@ import com.github.ysl3000.bukkit.pathfinding.goals.PathfinderGoalMoveToLocation;
 import com.github.ysl3000.bukkit.pathfinding.goals.TalkToStrangers;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal;
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager;
+import java.util.concurrent.TimeUnit;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Creature;
@@ -17,14 +18,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-
 public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
     private PathfinderManager pathfinderManager;
 
-    private Map<String,ICommand> commandMap = new HashMap<>();
+    private Map<String, ICommand> commandMap = new HashMap<>();
 
     public void onEnable() {
 
@@ -32,8 +30,8 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
         commandMap.put("chat", new Chat(pathfinderManager));
         commandMap.put("cookie", new DeliverCookie(pathfinderManager));
-        commandMap.put("move",new MoveToLocation(pathfinderManager));
-        commandMap.put("print",new PrintGoal(pathfinderManager));
+        commandMap.put("move", new MoveToLocation(pathfinderManager));
+        commandMap.put("print", new PrintGoal(pathfinderManager));
 
         Bukkit.getServer().getPluginManager().registerEvents(this, this);
     }
@@ -44,7 +42,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
         Player player = event.getPlayer();
 
-        List<String> args =Arrays.asList(event.getMessage().split(" "));
+        List<String> args = Arrays.asList(event.getMessage().split(" "));
 
         if (args.size() > 0) {
 
@@ -52,26 +50,26 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
             ICommand iCommand = commandMap.get(command);
 
-            List<String> param= new ArrayList<>();
+            List<String> param = new ArrayList<>();
 
             if (args.size() > 1) {
                 param = args.subList(1, args.size());
             }
 
             final List<String> finalParam = param;
-            Bukkit.getScheduler().runTask(this,()-> iCommand.execute(player, finalParam));
+            Bukkit.getScheduler().runTask(this, () -> iCommand.execute(player, finalParam));
         }
     }
 
-    private class Chat  implements ICommand {
+    private class Chat implements ICommand {
 
         private PathfinderManager pathfinderManager;
 
-        Chat(PathfinderManager pathfinderManager){
-                this.pathfinderManager=pathfinderManager;
+        Chat(PathfinderManager pathfinderManager) {
+            this.pathfinderManager = pathfinderManager;
         }
 
-        public boolean execute(Player p, List<String> args){
+        public boolean execute(Player p, List<String> args) {
 
             Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class);
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
@@ -79,7 +77,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity.addPathfinderGoal(0,
-                    new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
+            new TalkToStrangers(pathfinderGoalEntity, args, TimeUnit.SECONDS.toMillis(20)));
             return true;
         }
     }
@@ -93,16 +91,16 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
 
 
-        public boolean execute(Player p, List<String> args){
+        public boolean execute(Player p, List<String> args) {
 
             Creature creature = p.getWorld()
-                    .spawn(new Location(p.getWorld(), 235.0, 70.0, 246.0), Zombie.class);
+            .spawn(new Location(p.getWorld(), 235.0, 70.0, 246.0), Zombie.class);
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
 
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity
-                    .addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
+            .addPathfinderGoal(0, new PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature));
 
             return true;
         }
@@ -125,9 +123,9 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity.addPathfinderGoal(0,
-                    new PathfinderGoalMoveToLocation(
-                            pathfinderGoalEntity, new Location(p.getWorld(), 235.0, 70.0, 246.0),
-                            2.0, 0.0)
+            new PathfinderGoalMoveToLocation(
+            pathfinderGoalEntity, new Location(p.getWorld(), 235.0, 70.0, 246.0),
+            2.0, 0.0)
             );
 
             return true;
@@ -142,14 +140,14 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             this.pathfinderManager = pathfinderManager;
         }
 
-        public boolean execute(Player p, List<String> atgs){
+        public boolean execute(Player p, List<String> atgs) {
             Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class);
 
             Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity.addPathfinderGoal(0,
-                   new PathfinderGoalPrint()
+            new PathfinderGoalPrint()
             );
 
             return true;
@@ -160,7 +158,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
             private boolean shE = true;
             private boolean shT = true;
 
-            public boolean shouldExecute(){
+            public boolean shouldExecute() {
                 System.out.println("called should execute");
                 shE = !shE;
                 return shE;

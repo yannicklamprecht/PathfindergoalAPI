@@ -12,10 +12,10 @@ object PathfinderGoalAPI {
     }
 
     fun setApi(quantumConnectors: PathfinderManager) {
-        if (PathfinderGoalAPI.api != null) {
+        if (api != null) {
             throw UnsupportedOperationException("Cannot redefine singleton Server")
         } else {
-            PathfinderGoalAPI.api = quantumConnectors
+            api = quantumConnectors
         }
     }
 

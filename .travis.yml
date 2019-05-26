@@ -1,6 +1,6 @@
 language: java
 jdk:
-- oraclejdk8
+  - oraclejdk8
 sudo: false
 notifications:
   email:
@@ -9,13 +9,13 @@ notifications:
 addons:
   apt:
     packages:
-    - oracle-java8-installer
+      - oracle-java8-installer
 deploy:
   provider: releases
   file:
-  - "./PathfinderAPI/target/PathfinderAPI.jar"
-  - "./PathfinderAPI/target/PathfinderAPI-sources.jar"
-  - "./PathfinderTestPlugin/target/PathfinderTestPlugin.jar"
+    - "./PathfinderAPI/target/PathfinderAPI.jar"
+    - "./PathfinderAPI/target/PathfinderAPI-sources.jar"
+    - "./PathfinderTestPlugin/target/PathfinderTestPlugin.jar"
   skip_cleanup: true
   on:
     tags: true

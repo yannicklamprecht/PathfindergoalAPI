@@ -1,13 +1,7 @@
 package com.github.ysl3000.bukkit.pathfinding.pathfinding
 
-import org.bukkit.entity.Ambient
-import org.bukkit.entity.Creature
-import org.bukkit.entity.EnderDragon
-import org.bukkit.entity.Flying
-import org.bukkit.entity.Player
-import org.bukkit.entity.Slime
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
+import org.bukkit.entity.*
 
 /**
  * Created by ysl3000 on 08.12.16.
@@ -20,7 +14,28 @@ interface PathfinderManager {
      * @param creature entity you want to get the PathfinderGoalEntity
      * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
      */
+    @Deprecated("Forgot r of pathfinder")
     fun getPathfindeGoalEntity(creature: Creature): Insentient
+
+    /**
+     * Returns a pathfinderGoalEntity from creature
+     *
+     * @param creature entity you want to get the PathfinderGoalEntity
+     * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
+     */
+    fun getPathfinderGoalEntity(creature: Creature): Insentient
+
+
+    /**
+     * Returns a pathfinderGoalEntity from Mob 1.13+ only (Mob got added to Bukkit API in 1.13)
+     *
+     * @param mob entity you want to get the PathfinderGoalEntity
+     * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
+     */
+    fun getPathfinderGoalEntity(mob: Mob): Insentient {
+        throw UnsupportedOperationException("This method is only present in Bukkit 1.13+")
+    }
+
 
     /**
      * Returns a pathfinderGoalEntity from flying

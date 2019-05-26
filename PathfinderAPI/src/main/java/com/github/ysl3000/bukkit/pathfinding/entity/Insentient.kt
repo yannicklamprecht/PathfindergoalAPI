@@ -1,16 +1,10 @@
 package com.github.ysl3000.bukkit.pathfinding.entity
 
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.*
 import org.bukkit.Location
 import org.bukkit.entity.Entity
 import org.bukkit.entity.LivingEntity
 import org.bukkit.util.Vector
-
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerJump
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerLook
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerMove
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.Navigation
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector
 
 /**
  * Created by Yannick on 30.11.2016.

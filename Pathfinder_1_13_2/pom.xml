@@ -2,77 +2,77 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <artifactId>PathfindergoalAPI</artifactId>
-    <version>${revision}</version>
-  </parent>
-
   <artifactId>Pathfinder_1_13_2</artifactId>
-  <version>${revision}</version>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot</artifactId>
-      <version>1.13.2-R0.1-SNAPSHOT</version>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-      <artifactId>PathfinderAPI</artifactId>
-      <version>${revision}</version>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <version>${kotlin.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-test</artifactId>
-      <version>${kotlin.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <version>${kotlin.version}</version>
-    </dependency>
-  </dependencies>
 
   <build>
     <plugins>
       <plugin>
-        <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>
-        <version>${kotlin.version}</version>
-        <executions>
-          <execution>
-            <id>compile</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>compile</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>test-compile</id>
-            <phase>test-compile</phase>
-            <goals>
-              <goal>test-compile</goal>
-            </goals>
-          </execution>
-        </executions>
         <configuration>
           <jvmTarget>1.8</jvmTarget>
         </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+            </goals>
+            <id>compile</id>
+            <phase>compile</phase>
+          </execution>
+          <execution>
+            <goals>
+              <goal>test-compile</goal>
+            </goals>
+            <id>test-compile</id>
+            <phase>test-compile</phase>
+          </execution>
+        </executions>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <version>${kotlin.version}</version>
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>spigot</artifactId>
+      <groupId>org.spigotmc</groupId>
+      <scope>provided</scope>
+      <version>1.13.2-R0.1-SNAPSHOT</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>PathfinderAPI</artifactId>
+      <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+      <scope>provided</scope>
+      <version>${revision}</version>
+    </dependency>
+    <dependency>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <version>${kotlin.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>kotlin-test</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <scope>test</scope>
+      <version>${kotlin.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>kotlin-stdlib-jdk8</artifactId>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <version>${kotlin.version}</version>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>PathfindergoalAPI</artifactId>
+    <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+    <version>${revision}</version>
+  </parent>
+
+  <version>${revision}</version>
 
 
 </project>

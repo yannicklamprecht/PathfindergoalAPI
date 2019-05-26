@@ -1,11 +1,10 @@
 package com.github.ysl3000.bukkit.pathfinding.goals
 
-import org.bukkit.Location
-import org.bukkit.Material
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.Navigation
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import org.bukkit.Location
+import org.bukkit.Material
 
 class PathfinderGoalMoveToLocation(private val pathfinderGoalEntity: Insentient, private val targetLocation: Location,
                                    private val walkSpeed: Double, private val distance: Double) : PathfinderGoal {

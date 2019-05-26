@@ -4,14 +4,13 @@ import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_14_R1.entity.CraftIn
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderPlayer
-import org.bukkit.entity.Ambient
-import org.bukkit.entity.Creature
-import org.bukkit.entity.EnderDragon
-import org.bukkit.entity.Flying
-import org.bukkit.entity.Player
-import org.bukkit.entity.Slime
+import org.bukkit.entity.*
 
 class CraftPathfinderManager : PathfinderManager {
+
+    override fun getPathfinderGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
+
+    override fun getPathfinderGoalEntity(mob: Mob): Insentient = CraftInsentient(mob)
 
     override fun getPathfindeGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
 

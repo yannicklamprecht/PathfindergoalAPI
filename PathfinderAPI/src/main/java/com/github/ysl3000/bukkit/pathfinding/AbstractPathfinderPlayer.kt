@@ -8,11 +8,11 @@ open class AbstractPathfinderPlayer(
         private val relativeMotionX: () -> Double,
         private val relativeMotionY: () -> Double,
         private val relativeMotionZ: () -> Double,
-        private val relativeMotionYaw: ()->Float,
-        private val relativeMotionPitch: ()->Float,
-        private val relativeMotionForward: ()->Float,
-        private val relativeMotionSideward: ()->Float,
-        private val jump: ()->Boolean
+        private val relativeMotionYaw: () -> Float,
+        private val relativeMotionPitch: () -> Float,
+        private val relativeMotionForward: () -> Float,
+        private val relativeMotionSideward: () -> Float,
+        private val jump: () -> Boolean
 ) : PathfinderPlayer {
 
     override fun getPlayer(): Player = player.invoke()

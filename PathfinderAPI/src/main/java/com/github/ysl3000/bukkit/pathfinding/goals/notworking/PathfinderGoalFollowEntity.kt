@@ -1,10 +1,9 @@
 package com.github.ysl3000.bukkit.pathfinding.goals.notworking
 
-import org.bukkit.Material
-import org.bukkit.entity.LivingEntity
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import org.bukkit.Material
+import org.bukkit.entity.LivingEntity
 
 class PathfinderGoalFollowEntity(private val pathfinderGoalEntity: Insentient, private val entity: LivingEntity,
                                  private val moveRadius: Double, private val walkspeed: Double) : PathfinderGoal {

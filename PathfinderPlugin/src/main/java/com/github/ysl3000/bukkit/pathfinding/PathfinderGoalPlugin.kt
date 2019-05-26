@@ -16,8 +16,8 @@ class PathfinderGoalPlugin : JavaPlugin() {
 
     override fun onEnable() {
 
-        val version = Bukkit.getServer().javaClass.getPackage().getName().replace(".", ",")
-                .split(",".toRegex()).dropLastWhile({ it.isEmpty() }).toTypedArray()[3]
+        val version = Bukkit.getServer().javaClass.getPackage().name.replace(".", ",")
+                .split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[3]
 
         when (version) {
 

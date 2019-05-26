@@ -1,7 +1,5 @@
 package com.github.ysl3000.bukkit.pathfinding.pathfinding
 
-import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
-
 /**
  * Use
  *

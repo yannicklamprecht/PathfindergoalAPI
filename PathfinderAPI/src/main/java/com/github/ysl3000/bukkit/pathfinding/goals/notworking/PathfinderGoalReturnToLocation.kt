@@ -1,11 +1,10 @@
 package com.github.ysl3000.bukkit.pathfinding.goals.notworking
 
-import org.bukkit.Location
-import org.bukkit.entity.LivingEntity
-
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.Navigation
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
+import org.bukkit.Location
+import org.bukkit.entity.LivingEntity
 
 /**
  * Created by Yannick on 30.11.2016.
