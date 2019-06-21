@@ -119,7 +119,7 @@
 
   <properties>
     <dokka.version>0.9.18</dokka.version>
-    <kotlin.version>1.3.31</kotlin.version>
+    <kotlin.version>1.3.40</kotlin.version>
   </properties>
 
   <repositories>

@@ -1,15 +1,11 @@
 language: java
 jdk:
-  - oraclejdk8
+  - openjdk8
 sudo: false
 notifications:
   email:
     on_failure: always
     on_success: never
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
 deploy:
   provider: releases
   file:
