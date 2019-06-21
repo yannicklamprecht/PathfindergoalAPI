@@ -40,28 +40,11 @@
       <scope>provided</scope>
       <version>1.13-R0.1-SNAPSHOT</version>
     </dependency>
-
     <dependency>
       <artifactId>PathfinderAPI</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>provided</scope>
-      <version>${revision}</version>
-    </dependency>
-    <dependency>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <version>${kotlin.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>kotlin-test</artifactId>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <scope>test</scope>
-      <version>${kotlin.version}</version>
-    </dependency>
-    <dependency>
-      <artifactId>kotlin-stdlib-jdk8</artifactId>
-      <groupId>org.jetbrains.kotlin</groupId>
-      <version>${kotlin.version}</version>
+      <version>${project.parent.version}</version>
     </dependency>
   </dependencies>
   <modelVersion>4.0.0</modelVersion>
@@ -69,10 +52,8 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>${revision}</version>
+    <version>1.3.3.5</version>
   </parent>
-
-  <version>${revision}</version>
 
 
 </project>

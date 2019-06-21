@@ -81,34 +81,34 @@
       <artifactId>PathfinderAPI</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
-      <version>${revision}</version>
+      <version>${project.parent.version}</version>
     </dependency>
 
     <dependency>
       <artifactId>Pathfinder_1_12</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
-      <version>${revision}</version>
+      <version>${project.parent.version}</version>
     </dependency>
 
     <dependency>
       <artifactId>Pathfinder_1_13</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
-      <version>${revision}</version>
+      <version>${project.parent.version}</version>
     </dependency>
     <dependency>
       <artifactId>Pathfinder_1_13_2</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
-      <version>${revision}</version>
+      <version>${project.parent.version}</version>
     </dependency>
 
     <dependency>
       <artifactId>Pathfinder_1_14</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
-      <version>${revision}</version>
+      <version>${project.parent.version}</version>
     </dependency>
 
 
@@ -129,8 +129,6 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>${revision}</version>
+    <version>1.3.3.5</version>
   </parent>
-
-  <version>${revision}</version>
 </project>
