@@ -132,9 +132,9 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     override fun getHeadHeight(): Float = handle.headHeight
 
-    override fun getDefaultYaw(): Int = handle.M()
+    override fun getDefaultYaw(): Int = handle.dC()
 
-    override fun getDefaultPitch(): Int = handle.dA()
+    override fun getDefaultPitch(): Int = handle.M()
 
     override fun hasPositionChanged(): Boolean = handle.positionChanged
 
