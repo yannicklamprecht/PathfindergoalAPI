@@ -2,6 +2,9 @@ language: java
 jdk:
   - openjdk8
 sudo: false
+cache:
+  - directories:
+      - $HOME/.m2
 env:
   - MAVEN_OPTS=-XX:+TieredCompilation -XX:TieredStopAtLevel=1
 notifications:
