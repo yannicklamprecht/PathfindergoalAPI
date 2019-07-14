@@ -12,7 +12,7 @@ notifications:
     on_failure: always
     on_success: never
 install:
-  - "mvn clean install -P Impl -T 1C -DdependencyLocationsEnabled=false"
+  - "mvn clean install -T 1C -DdependencyLocationsEnabled=false"
 deploy:
   provider: releases
   file:
