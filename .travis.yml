@@ -4,12 +4,12 @@ jdk:
 sudo: false
 env:
   - MAVEN_OPTS=-XX:+TieredCompilation -XX:TieredStopAtLevel=1
-script:
-  - "mvn -T 1C install -am —offline"
 notifications:
   email:
     on_failure: always
     on_success: never
+install:
+  - "mvn clean install -P Impl -T 1C -DdependencyLocationsEnabled=false"
 deploy:
   provider: releases
   file:
