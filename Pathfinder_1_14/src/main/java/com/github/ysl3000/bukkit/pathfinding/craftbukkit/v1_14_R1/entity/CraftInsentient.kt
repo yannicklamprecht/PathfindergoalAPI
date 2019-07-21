@@ -8,6 +8,8 @@ import net.minecraft.server.v1_14_R1.EntityInsentient
 import net.minecraft.server.v1_14_R1.PathfinderGoal
 import net.minecraft.server.v1_14_R1.PathfinderGoalSelector
 import org.bukkit.Location
+import org.bukkit.attribute.Attributable
+import org.bukkit.attribute.Attribute
 import org.bukkit.craftbukkit.v1_14_R1.entity.*
 import org.bukkit.entity.*
 import org.bukkit.util.Vector
@@ -26,7 +28,7 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
     constructor(flying: Flying) : this((flying as CraftFlying).handle)
 
     init {
-        this.navigation = CraftNavigation(handle.navigation)
+        this.navigation = CraftNavigation(handle.navigation,(handle.bukkitEntity as Attributable).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)?.value?:0.7)
     }
 
 
