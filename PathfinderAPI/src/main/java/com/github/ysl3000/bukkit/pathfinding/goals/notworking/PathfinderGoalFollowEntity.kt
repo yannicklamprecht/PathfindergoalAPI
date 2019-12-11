@@ -38,7 +38,7 @@ class PathfinderGoalFollowEntity(private val pathfinderGoalEntity: Insentient, p
         if (pathfinderGoalEntity.getBukkitEntity().location
                         .add(pathfinderGoalEntity.getBukkitEntity().location.direction.normalize())
                         .block.type != Material.AIR) {
-            this.pathfinderGoalEntity.getControllerJump().jump()
+            this.pathfinderGoalEntity.jump()
         }
     }
 

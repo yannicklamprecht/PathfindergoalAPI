@@ -47,7 +47,7 @@ class PathfinderGoalGimmiCookie(private val pathfinderGoalEntity: Insentient, pr
     }
 
     override fun execute() {
-        this.pathfinderGoalEntity.getControllerJump().jump()
+        this.pathfinderGoalEntity.jump()
         if (creature.location.distanceSquared(nearestPlayer!!.location) <= 1) {
             this.creature.world.dropItem(nearestPlayer!!.location, COOKIE)
             this.creature.equipment?.setItemInMainHand(null)

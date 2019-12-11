@@ -48,11 +48,10 @@ class PathfinderGoalSteerEntity(private val pathfinderManager: PathfinderManager
 
         if (blockInDirection.block.type.isSolid && !blockInDirection.add(0.0, 1.0, 0.0).block
                         .type.isSolid) {
-            pathfinderGoalEntity.getControllerJump().jump()
+            pathfinderGoalEntity.jump()
         }
 
-        this.pathfinderGoalEntity.getControllerMove()
-                .move(pathfinderPlayer!!.getMotionForward(), pathfinderPlayer!!.getMotionSideward())
+        this.pathfinderGoalEntity.setStrafeDirection(pathfinderPlayer!!.getMotionForward(), pathfinderPlayer!!.getMotionSideward())
         val location = player.location
 
         this.pathfinderGoalEntity.setRotation(location.yaw, location.yaw)

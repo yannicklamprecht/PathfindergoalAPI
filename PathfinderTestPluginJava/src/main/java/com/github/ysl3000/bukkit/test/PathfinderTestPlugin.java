@@ -77,7 +77,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         public boolean execute(Player p, List<String> args) {
 
             Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class);
-            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
+            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfinderGoalEntity(creature);
 
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
@@ -100,7 +100,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
             Creature creature = p.getWorld()
             .spawn(new Location(p.getWorld(), 235.0, 70.0, 246.0), Zombie.class);
-            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
+            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfinderGoalEntity(creature);
 
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
@@ -124,7 +124,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         public boolean execute(Player p, List<String> args) {
 
             Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class);
-            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
+            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfinderGoalEntity(creature);
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity.addPathfinderGoal(0,
@@ -148,7 +148,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         public boolean execute(Player p, List<String> atgs) {
             Creature creature = p.getWorld().spawn(p.getLocation(), Zombie.class);
 
-            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfindeGoalEntity(creature);
+            Insentient pathfinderGoalEntity = this.pathfinderManager.getPathfinderGoalEntity(creature);
             pathfinderGoalEntity.clearPathfinderGoals();
             pathfinderGoalEntity.clearTargetPathfinderGoals();
             pathfinderGoalEntity.addPathfinderGoal(0,

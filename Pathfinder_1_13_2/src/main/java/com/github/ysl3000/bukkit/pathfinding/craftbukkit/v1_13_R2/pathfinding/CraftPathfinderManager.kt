@@ -12,8 +12,6 @@ class CraftPathfinderManager : PathfinderManager {
 
     override fun getPathfinderGoalEntity(mob: Mob): Insentient = CraftInsentient(mob)
 
-    override fun getPathfindeGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
-
     override fun getPathfinderGoalEntity(flying: Flying): Insentient = CraftInsentient(flying)
 
     override fun getPathfinderGoalEntity(ambient: Ambient): Insentient = CraftInsentient(ambient)

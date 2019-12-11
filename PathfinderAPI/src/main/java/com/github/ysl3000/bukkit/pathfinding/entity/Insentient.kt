@@ -14,43 +14,6 @@ interface Insentient {
 
     fun getLookingAt(): Location
 
-    /**
-     * Will return the PathfinderGoalTargetSelector
-     *
-     * @return targetSelector
-     */
-    @Deprecated("")
-    fun getTargetSelector(): PathfinderGoalSelector
-
-    /**
-     * Will return the PathfinderGoalSelector
-     *
-     * @return selector
-     */
-    @Deprecated("")
-    fun getGoalSelector(): PathfinderGoalSelector
-
-    /**
-     * Get the ControllerJump for jumping
-     *
-     * @return controllerJump to let the entity jump
-     */
-    fun getControllerJump(): ControllerJump
-
-    /**
-     * Get the ControllerLook for looking
-     *
-     * @return controllerLook to let the entity look at a target
-     */
-    fun getControllerLook(): ControllerLook
-
-
-    /**
-     * Get the controllerMove direct movement
-     *
-     * @return controllerMove to move the entity directly
-     */
-    fun getControllerMove(): ControllerMove
 
     /**
      * Get the Navigation for moving Entity
@@ -66,21 +29,6 @@ interface Insentient {
      * @return headHeight
      */
     fun getHeadHeight(): Float
-
-
-    /**
-     * Will return the entities default yaw
-     *
-     * @return yaw
-     */
-    fun getDefaultYaw(): Int
-
-    /**
-     * Will return the entities default pitch
-     *
-     * @return pitch
-     */
-    fun getDefaultPitch(): Int
 
     /**
      * Will return the LivingEntity of Bukkit
@@ -148,27 +96,6 @@ interface Insentient {
      * @param livingEntity the other entity
      */
     fun onEntityKill(livingEntity: LivingEntity)
-
-
-    /**
-     * @param motionX relative motionX
-     * @param motionY relative motionY
-     * @param motionZ relative motionZ
-     */
-    @Deprecated("use {@link Insentient#setMovementDirection(Vector, double)} Will move the Entity\n" +
-            "    relative")
-    fun moveRelative(motionX: Double, motionY: Double, motionZ: Double)
-
-
-    /**
-     * @param motionX relative motionX
-     * @param motionY relative motionY
-     * @param motionZ relative motionZ
-     * @param speed the speed multiplier
-     */
-    @Deprecated("use {@link Insentient#setMovementDirection(Vector, double)} Will move the Entity\n" +
-            "    relative")
-    fun moveRelative(motionX: Double, motionY: Double, motionZ: Double, speed: Double)
 
 
     /**

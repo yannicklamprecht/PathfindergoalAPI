@@ -22,9 +22,9 @@ class PathfinderGoalPlugin : JavaPlugin() {
         when (version) {
 
             "v1_12_R1" -> this.craftPathfinderManager = com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_12_R1.pathfinding.CraftPathfinderManager()
-            "v1_13_R1" -> this.craftPathfinderManager = com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R1.pathfinding.CraftPathfinderManager()
             "v1_13_R2" -> this.craftPathfinderManager = com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_13_R2.pathfinding.CraftPathfinderManager()
             "v1_14_R1" -> this.craftPathfinderManager = com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_14_R1.pathfinding.CraftPathfinderManager()
+            "v1_15_R1" -> this.craftPathfinderManager = com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_15_R1.pathfinding.CraftPathfinderManager()
 
             else -> {
                 println("This version of Minecraft is not supported")

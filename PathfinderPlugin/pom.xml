@@ -90,12 +90,6 @@
     </dependency>
 
     <dependency>
-      <artifactId>Pathfinder_1_13</artifactId>
-      <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-      <scope>compile</scope>
-      <version>${project.parent.version}</version>
-    </dependency>
-    <dependency>
       <artifactId>Pathfinder_1_13_2</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
@@ -104,6 +98,13 @@
 
     <dependency>
       <artifactId>Pathfinder_1_14</artifactId>
+      <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+      <scope>compile</scope>
+      <version>${project.parent.version}</version>
+    </dependency>
+
+    <dependency>
+      <artifactId>Pathfinder_1_15</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
       <version>${project.parent.version}</version>

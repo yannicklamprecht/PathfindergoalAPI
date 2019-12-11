@@ -28,7 +28,8 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
     constructor(flying: Flying) : this((flying as CraftFlying).handle)
 
     init {
-        this.navigation = CraftNavigation(handle.navigation,(handle.bukkitEntity as Attributable).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)?.value?:0.7)
+        this.navigation = CraftNavigation(handle.navigation, (handle.bukkitEntity as Attributable).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)?.value
+                ?: 0.7)
     }
 
 
@@ -106,9 +107,6 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     override fun setStrafeDirection(forward: Float, sideward: Float) = handle.controllerMove.a(forward, sideward)
 
-    override fun getTargetSelector(): com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector = TargetGoalSelector()
-
-    override fun getGoalSelector(): com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector = GoalSelector()
 
     override fun resetGoalsToDefault() {
         if (reset == null) {
@@ -124,19 +122,9 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     }
 
-    override fun getControllerJump(): com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerJump = ControllerJump()
-
-    override fun getControllerLook(): com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerLook = ControllerLookImpl()
-
-    override fun getControllerMove(): com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerMove = ControllerMove()
-
     override fun getNavigation(): com.github.ysl3000.bukkit.pathfinding.pathfinding.Navigation = navigation
 
     override fun getHeadHeight(): Float = handle.headHeight
-
-    override fun getDefaultYaw(): Int = handle.dC()
-
-    override fun getDefaultPitch(): Int = handle.M()
 
     override fun hasPositionChanged(): Boolean = handle.positionChanged
 
@@ -144,85 +132,12 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     override fun getBukkitEntity(): Entity = handle.bukkitEntity
 
-    override fun moveRelative(motionX: Double, motionY: Double, motionZ: Double) = moveRelative(motionX, motionY, motionZ, 1.0)
-
-    override fun moveRelative(motionX: Double, motionY: Double, motionZ: Double, speed: Double) {
-        this.handle.mot = this.handle.mot.add(motionX * speed, motionY * speed, motionZ * speed)
-        this.handle.recalcPosition()
-    }
-
     override fun setRotation(yaw: Float, pitch: Float) {
         this.handle.yaw = yaw
         this.handle.pitch = pitch
     }
 
     override fun updateRenderAngles() = handle.controllerMove.a()
-
-
-    private inner class GoalSelector : com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector {
-
-        override fun addPathfinderGoal(priority: Int,
-                                       goal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) = this@CraftInsentient.addPathfinderGoal(priority, goal)
-
-        override fun removePathfinderGoal(
-                goal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) = this@CraftInsentient.removePathfinderGoal(goal)
-
-        override fun clearGoals() = this@CraftInsentient.clearPathfinderGoals()
-    }
-
-    private inner class TargetGoalSelector : com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoalSelector {
-
-        override fun addPathfinderGoal(priority: Int,
-                                       goal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) = this@CraftInsentient.addTargetPathfinderGoal(priority, goal)
-
-        override fun removePathfinderGoal(
-                goal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) = this@CraftInsentient.removeTargetPathfinderGoal(goal)
-
-
-        override fun clearGoals() = this@CraftInsentient.clearTargetPathfinderGoals()
-    }
-
-    private inner class ControllerJump : com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerJump {
-        override fun jump() = this@CraftInsentient.jump()
-    }
-
-    private inner class ControllerMove : com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerMove {
-
-        override fun isOperationMove(): Boolean = handle.controllerMove.b()
-
-        override fun move(motionX: Double, motionY: Double, motionZ: Double, speed: Double) = this@CraftInsentient.setMovementDirection(Vector(motionX, motionY, motionZ), speed)
-
-        override fun move(forward: Float, sideward: Float) = this@CraftInsentient.setStrafeDirection(forward, sideward)
-
-        override fun update() = handle.controllerMove.a()
-
-        override fun getX(): Double = handle.controllerMove.c()
-
-        override fun getY(): Double = handle.controllerMove.d()
-
-        override fun getZ(): Double = handle.controllerMove.e()
-
-        override fun getSpeed(): Double = handle.controllerMove.f()
-    }
-
-    private inner class ControllerLookImpl : com.github.ysl3000.bukkit.pathfinding.pathfinding.ControllerLook {
-
-        override fun lookAt(x: Double, y: Double, z: Double, yaw: Float, pitch: Float) = this@CraftInsentient.lookAt(Location(handle.bukkitEntity.world, x, y, z, yaw, pitch))
-
-        override fun lookAt(location: Location) = this@CraftInsentient.lookAt(location)
-
-        override fun lookAt(entity: Entity, yaw: Float, pitch: Float) = this@CraftInsentient.lookAt(entity)
-
-        override fun reset() = handle.controllerLook.a()
-
-        override fun isReset(): Boolean = handle.controllerLook.c()
-
-        override fun getLocationX(): Double = handle.controllerMove.d()
-
-        override fun getLocationY(): Double = handle.controllerMove.e()
-
-        override fun getLocationZ(): Double = handle.controllerMove.f()
-    }
 
     companion object {
         private var reset: Method? = null

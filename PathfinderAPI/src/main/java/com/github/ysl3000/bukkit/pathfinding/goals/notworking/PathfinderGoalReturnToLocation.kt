@@ -31,7 +31,7 @@ class PathfinderGoalReturnToLocation(private val pathfinderGoalEntity: Insentien
     }
 
     override fun execute() {
-        this.pathfinderGoalEntity.getControllerJump().jump()
+        this.pathfinderGoalEntity.jump()
     }
 
 

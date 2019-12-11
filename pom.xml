@@ -42,9 +42,9 @@
       <modules>
         <module>PathfinderPlugin</module>
         <module>Pathfinder_1_12</module>
-        <module>Pathfinder_1_13</module>
         <module>Pathfinder_1_13_2</module>
         <module>Pathfinder_1_14</module>
+        <module>Pathfinder_1_15</module>
       </modules>
     </profile>
   </profiles>

@@ -14,15 +14,6 @@ interface PathfinderManager {
      * @param creature entity you want to get the PathfinderGoalEntity
      * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
      */
-    @Deprecated("Forgot r of pathfinder")
-    fun getPathfindeGoalEntity(creature: Creature): Insentient
-
-    /**
-     * Returns a pathfinderGoalEntity from creature
-     *
-     * @param creature entity you want to get the PathfinderGoalEntity
-     * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
-     */
     fun getPathfinderGoalEntity(creature: Creature): Insentient
 
 

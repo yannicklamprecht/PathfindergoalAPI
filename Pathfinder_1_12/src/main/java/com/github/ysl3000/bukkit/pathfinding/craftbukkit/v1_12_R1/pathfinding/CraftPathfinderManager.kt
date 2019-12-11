@@ -9,8 +9,6 @@ import org.bukkit.entity.*
 class CraftPathfinderManager : PathfinderManager {
     override fun getPathfinderGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
 
-    override fun getPathfindeGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
-
     override fun getPathfinderGoalEntity(flying: Flying): Insentient = CraftInsentient(flying)
 
     override fun getPathfinderGoalEntity(ambient: Ambient): Insentient = CraftInsentient(ambient)

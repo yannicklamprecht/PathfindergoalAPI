@@ -35,7 +35,7 @@ class PathfinderGoalMoveToLocation(private val pathfinderGoalEntity: Insentient,
     override fun execute() {
         if (pathfinderGoalEntity.getBukkitEntity().location.add(pathfinderGoalEntity.getBukkitEntity().location.direction.normalize())
                         .block.type != Material.AIR) {
-            pathfinderGoalEntity.getControllerJump().jump()
+            pathfinderGoalEntity.jump()
         }
 
     }

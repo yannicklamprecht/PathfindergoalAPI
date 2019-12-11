@@ -51,7 +51,7 @@ class PathfinderGoalWalkToSteakAndEat(private val pathfinderGoalEntity: Insentie
      */
     override fun execute() {
         pathfinderGoalEntity.getNavigation().moveTo(target!!, 2.0)
-        pathfinderGoalEntity.getControllerJump().jump()
+        pathfinderGoalEntity.jump()
     }
 
 

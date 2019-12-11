@@ -77,7 +77,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
 
     private fun chatCommand(p: Player, args: List<String>): Boolean {
         val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
-        val pathfinderGoalEntity = this.pathfinderManager?.getPathfindeGoalEntity(creature)
+        val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
         clear(pathfinderGoalEntity)
         pathfinderGoalEntity?.let { insentient: Insentient ->
             {
@@ -94,7 +94,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
 
         val creature = p.world
                 .spawn<Zombie>(Location(p.world, 235.0, 70.0, 246.0), Zombie::class.java)
-        val pathfinderGoalEntity = this.pathfinderManager?.getPathfindeGoalEntity(creature)
+        val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
         clear(pathfinderGoalEntity)
         pathfinderGoalEntity?.addPathfinderGoal(0, PathfinderGoalGimmiCookie(pathfinderGoalEntity, creature))
         return true
@@ -104,7 +104,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
     private fun moveToLocationCommand(p: Player, args: List<String>): Boolean {
 
         val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
-        val pathfinderGoalEntity = this.pathfinderManager?.getPathfindeGoalEntity(creature)
+        val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
 
         clear(pathfinderGoalEntity)
         pathfinderGoalEntity?.addPathfinderGoal(0,
@@ -118,7 +118,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
     private fun printGoalCommand(p: Player, args: List<String>): Boolean {
         val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
 
-        val pathfinderGoalEntity = this.pathfinderManager?.getPathfindeGoalEntity(creature)
+        val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
         clear(pathfinderGoalEntity)
         pathfinderGoalEntity?.addPathfinderGoal(0,
                 PathfinderGoalPrint()
