@@ -2,11 +2,11 @@ package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_15_R1.pathfinding
 
 import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_15_R1.entity.CraftInsentient
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
-import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManager
+import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManagerMob
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderPlayer
 import org.bukkit.entity.*
 
-class CraftPathfinderManager : PathfinderManager {
+class CraftPathfinderManager : PathfinderManagerMob {
 
     override fun getPathfinderGoalEntity(creature: Creature): Insentient = CraftInsentient(creature)
 

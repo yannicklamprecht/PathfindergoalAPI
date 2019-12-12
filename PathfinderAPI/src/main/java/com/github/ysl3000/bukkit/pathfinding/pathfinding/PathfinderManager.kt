@@ -18,17 +18,6 @@ interface PathfinderManager {
 
 
     /**
-     * Returns a pathfinderGoalEntity from Mob 1.13+ only (Mob got added to Bukkit API in 1.13)
-     *
-     * @param mob entity you want to get the PathfinderGoalEntity
-     * @return pathfinderGoalEntity the entity you can apply pathfindergoals on to
-     */
-    fun getPathfinderGoalEntity(mob: Mob): Insentient {
-        throw UnsupportedOperationException("This method is only present in Bukkit 1.13+")
-    }
-
-
-    /**
      * Returns a pathfinderGoalEntity from flying
      *
      * @param flying entity you want to get the PathfinderGoalEntity

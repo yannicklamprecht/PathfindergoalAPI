@@ -26,14 +26,14 @@ interface PathfinderGoal {
     fun init()
 
     /**
-     * Is called when [.shouldExecute] returns true
+     * Is called when [PathfinderGoal.shouldExecute] returns true
      */
     fun execute()
 
     /**
      * Reset the pathfinder AI pack to its initial state
      *
-     * Is called when [.shouldExecute] returns false
+     * Is called when [PathfinderGoal.shouldExecute] returns false
      */
     fun reset()
 }
