@@ -29,8 +29,9 @@ class PathfinderGoalPlugin : JavaPlugin() {
             else -> {
                 println("This version of Minecraft is not supported")
                 Bukkit.getPluginManager().disablePlugin(this)
+                return
             }
         }
-        PathfinderGoalAPI.setApi(this.craftPathfinderManager!!)
+        this.craftPathfinderManager?.let(PathfinderGoalAPI::setApi)
     }
 }
