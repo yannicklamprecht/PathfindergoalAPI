@@ -54,11 +54,9 @@
       <plugin>
         <artifactId>dokka-maven-plugin</artifactId>
         <configuration>
-          <moduleName>${project.name}</moduleName>
           <outputDir>${project.basedir}/../docs</outputDir>
           <skipDeprecated>true</skipDeprecated>
           <skipEmptyPackages>true</skipEmptyPackages>
-          <outputFormat>javadoc</outputFormat>
         </configuration>
         <executions>
           <execution>
