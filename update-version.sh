@@ -6,4 +6,4 @@ then
   exit 1
 fi
 
-mvn release:update-versions -DdevelopmentVersion=$1 -P Impl -DautoVersionSubmodules=true
+mvn release:update-versions -DdevelopmentVersion="$1" -P Impl -DautoVersionSubmodules=true
