@@ -61,9 +61,9 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
             }
 
             val finalParam = param
-            Bukkit.getScheduler().runTask(this, {
+            Bukkit.getScheduler().runTask(this, Runnable {
                 iCommand?.invoke(player, finalParam)
-            } as Runnable)
+            })
         }
     }
 

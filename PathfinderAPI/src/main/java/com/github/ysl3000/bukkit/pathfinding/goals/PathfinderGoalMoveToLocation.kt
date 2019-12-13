@@ -11,7 +11,6 @@ class PathfinderGoalMoveToLocation(private val pathfinderGoalEntity: Insentient,
     private val navigation: Navigation = pathfinderGoalEntity.getNavigation()
 
     private var isAlreadySet = false
-    private val isDone = false
 
 
     override fun shouldExecute(): Boolean {
