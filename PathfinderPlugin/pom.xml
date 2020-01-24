@@ -83,13 +83,6 @@
     </dependency>
 
     <dependency>
-      <artifactId>Pathfinder_1_12</artifactId>
-      <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-      <scope>compile</scope>
-      <version>${project.parent.version}</version>
-    </dependency>
-
-    <dependency>
       <artifactId>Pathfinder_1_13_2</artifactId>
       <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
       <scope>compile</scope>
@@ -128,6 +121,6 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>1.152.0-SNAPSHOT</version>
+    <version>1.152.1-SNAPSHOT</version>
   </parent>
 </project>

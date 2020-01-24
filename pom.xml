@@ -11,7 +11,7 @@
     <dokka.version>0.10.0</dokka.version>
   </properties>
 
-  <version>1.152.0-SNAPSHOT</version>
+  <version>1.152.1-SNAPSHOT</version>
 
   <dependencies>
     <dependency>
@@ -41,7 +41,6 @@
       <id>Impl</id>
       <modules>
         <module>PathfinderPlugin</module>
-        <module>Pathfinder_1_12</module>
         <module>Pathfinder_1_13_2</module>
         <module>Pathfinder_1_14</module>
         <module>Pathfinder_1_15</module>

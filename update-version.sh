@@ -6,4 +6,5 @@ then
   exit 1
 fi
 
-mvn release:update-versions -DdevelopmentVersion="$1" -P Impl -DautoVersionSubmodules=true
+mvn versions:set -DnewVersion="$1"
+mvn versions:commit
