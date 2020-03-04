@@ -33,9 +33,9 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
         this.pathfinderManager = PathfinderGoalAPI.getAPI()
 
         commandMap["chat"] = this::chatCommand
-        commandMap["cookie"] = this::deliverCookieCommand
-        commandMap["move"] = this::moveToLocationCommand
-        commandMap["print"] = this::printGoalCommand
+        commandMap["cookie"] = { p: Player, _: List<String> -> this.deliverCookieCommand(p) }
+        commandMap["move"] = { p: Player, _: List<String> -> this.moveToLocationCommand(p) }
+        commandMap["print"] = { p: Player, _: List<String> -> this.printGoalCommand(p) }
 
         Bukkit.getServer().pluginManager.registerEvents(this, this)
     }
@@ -46,7 +46,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
 
         val player = event.player
 
-        val args = Arrays.asList<String>(*event.message.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
+        val args = mutableListOf(*event.message.split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray())
 
         if (args.size > 0) {
 
@@ -76,7 +76,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
     }
 
     private fun chatCommand(p: Player, args: List<String>): Boolean {
-        val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
+        val creature = p.world.spawn(p.location, Zombie::class.java)
         val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
         clear(pathfinderGoalEntity)
         pathfinderGoalEntity?.let { insentient: Insentient ->
@@ -90,7 +90,7 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
         return true
     }
 
-    private fun deliverCookieCommand(p: Player, args: List<String>): Boolean {
+    private fun deliverCookieCommand(p: Player): Boolean {
 
         val creature = p.world
                 .spawn<Zombie>(Location(p.world, 235.0, 70.0, 246.0), Zombie::class.java)
@@ -101,9 +101,9 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
     }
 
 
-    private fun moveToLocationCommand(p: Player, args: List<String>): Boolean {
+    private fun moveToLocationCommand(p: Player): Boolean {
 
-        val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
+        val creature = p.world.spawn(p.location, Zombie::class.java)
         val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
 
         clear(pathfinderGoalEntity)
@@ -115,8 +115,8 @@ class PathfinderTestPlugin : JavaPlugin(), Listener {
     }
 
 
-    private fun printGoalCommand(p: Player, args: List<String>): Boolean {
-        val creature = p.world.spawn<Zombie>(p.location, Zombie::class.java)
+    private fun printGoalCommand(p: Player): Boolean {
+        val creature = p.world.spawn(p.location, Zombie::class.java)
 
         val pathfinderGoalEntity = this.pathfinderManager?.getPathfinderGoalEntity(creature)
         clear(pathfinderGoalEntity)

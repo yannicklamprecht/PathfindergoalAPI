@@ -17,13 +17,6 @@
             <id>compile</id>
             <phase>compile</phase>
           </execution>
-          <execution>
-            <goals>
-              <goal>test-compile</goal>
-            </goals>
-            <id>test-compile</id>
-            <phase>test-compile</phase>
-          </execution>
         </executions>
         <groupId>org.jetbrains.kotlin</groupId>
         <version>${kotlin.version}</version>
