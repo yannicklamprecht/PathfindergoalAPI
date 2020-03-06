@@ -25,13 +25,11 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class PathfinderTestPlugin extends JavaPlugin implements Listener {
 
-    private PathfinderManager pathfinderManager;
-
     private Map<String, ICommand> commandMap = new HashMap<>();
 
     public void onEnable() {
 
-        this.pathfinderManager = PathfinderGoalAPI.INSTANCE.getAPI();
+        PathfinderManager pathfinderManager = PathfinderGoalAPI.getAPI();
 
         commandMap.put("chat", new Chat(pathfinderManager));
         commandMap.put("cookie", new DeliverCookie(pathfinderManager));
@@ -66,7 +64,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
     }
 
-    private class Chat implements ICommand {
+    private static class Chat implements ICommand {
 
         private PathfinderManager pathfinderManager;
 
@@ -87,7 +85,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
     }
 
-    private class DeliverCookie implements ICommand {
+    private static class DeliverCookie implements ICommand {
 
         private PathfinderManager pathfinderManager;
 
@@ -111,7 +109,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
     }
 
-    private class MoveToLocation implements ICommand {
+    private static class MoveToLocation implements ICommand {
 
 
         private PathfinderManager pathfinderManager;
@@ -137,7 +135,7 @@ public class PathfinderTestPlugin extends JavaPlugin implements Listener {
         }
     }
 
-    private class PrintGoal implements ICommand {
+    private static class PrintGoal implements ICommand {
 
         private PathfinderManager pathfinderManager;
 

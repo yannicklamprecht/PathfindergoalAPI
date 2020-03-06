@@ -7,6 +7,7 @@ object PathfinderGoalAPI {
 
     private var api: PathfinderManager? = null
 
+    @JvmStatic
     fun getAPI(): PathfinderManager? {
         return api
     }
