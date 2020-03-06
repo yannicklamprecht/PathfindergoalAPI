@@ -43,6 +43,6 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>1.152.1-SNAPSHOT</version>
+    <version>1.152.2-SNAPSHOT</version>
   </parent>
 </project>

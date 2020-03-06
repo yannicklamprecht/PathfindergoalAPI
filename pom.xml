@@ -11,7 +11,7 @@
     <dokka.version>0.10.1</dokka.version>
   </properties>
 
-  <version>1.152.1-SNAPSHOT</version>
+  <version>1.152.2-SNAPSHOT</version>
 
   <dependencies>
     <dependency>

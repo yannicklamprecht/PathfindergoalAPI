@@ -8,3 +8,8 @@ fi
 
 mvn versions:set -DnewVersion="$1"
 mvn versions:commit
+
+git checkout origin/master
+git pull origin master
+git tag "$1"
+git push orgin master --
