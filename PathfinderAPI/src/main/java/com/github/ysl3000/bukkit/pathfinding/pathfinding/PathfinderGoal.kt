@@ -17,8 +17,12 @@ interface PathfinderGoal {
      *
      * @return true if should terminate
      */
+    @Deprecated("Does make exactly the opposite", replaceWith = ReplaceWith("canContinueToUse"))
     fun shouldTerminate(): Boolean
 
+    fun canContinueToUse(): Boolean {
+        return !shouldTerminate();
+    }
     /**
      * Runs initially and should be used to setUp goalEnvironment Condition needs to be defined thus
      * your code in it isn't called

@@ -8,7 +8,7 @@ class CraftPathfinderGoalWrapper(
 
     override fun a() = pathfinderGoal.shouldExecute()
 
-    override fun b() = pathfinderGoal.shouldTerminate()
+    override fun b() = pathfinderGoal.canContinueToUse()
 
     override fun c() = pathfinderGoal.init()
 
