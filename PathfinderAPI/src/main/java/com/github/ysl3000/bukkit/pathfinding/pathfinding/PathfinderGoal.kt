@@ -20,8 +20,10 @@ interface PathfinderGoal {
     @Deprecated("Does make exactly the opposite", replaceWith = ReplaceWith("canContinueToUse"))
     fun shouldTerminate(): Boolean
 
+    @JvmDefault
+    @SuppressWarnings("deprecation")
     fun canContinueToUse(): Boolean {
-        return !shouldTerminate();
+        return !shouldTerminate()
     }
     /**
      * Runs initially and should be used to setUp goalEnvironment Condition needs to be defined thus

@@ -20,6 +20,9 @@
                 <artifactId>kotlin-maven-plugin</artifactId>
                 <configuration>
                     <jvmTarget>1.8</jvmTarget>
+                    <args>
+                        <arg>-Xjvm-default=compatibility</arg>
+                    </args>
                 </configuration>
                 <executions>
                     <execution>
