@@ -6,10 +6,9 @@ then
   exit 1
 fi
 
-mvn versions:set -DnewVersion="$1"
-mvn versions:commit
-
 git checkout origin/master
 git pull origin master
+mvn versions:set -DnewVersion="$1"
+mvn versions:commit
 git tag "$1"
-git push orgin master --
+git push origin master --tags

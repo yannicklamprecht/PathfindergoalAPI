@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+
+  <parent>
+    <artifactId>PathfindergoalAPI</artifactId>
+    <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+    <version>1.152.2-SNAPSHOT</version>
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
   <artifactId>Pathfinder_1_13_2</artifactId>
 
   <build>
     <plugins>
       <plugin>
+        <groupId>org.jetbrains.kotlin</groupId>
+        <version>${kotlin.version}</version>
         <artifactId>kotlin-maven-plugin</artifactId>
         <configuration>
           <jvmTarget>1.8</jvmTarget>
@@ -18,8 +29,6 @@
             <phase>compile</phase>
           </execution>
         </executions>
-        <groupId>org.jetbrains.kotlin</groupId>
-        <version>${kotlin.version}</version>
       </plugin>
     </plugins>
   </build>
@@ -38,11 +47,4 @@
       <version>${project.parent.version}</version>
     </dependency>
   </dependencies>
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <artifactId>PathfindergoalAPI</artifactId>
-    <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>1.152.2-SNAPSHOT</version>
-  </parent>
 </project>

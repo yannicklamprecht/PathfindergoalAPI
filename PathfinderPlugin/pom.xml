@@ -24,7 +24,7 @@
             <goals>
               <goal>filter-sources</goal>
             </goals>
-            <id>generate-verion-class</id>
+            <id>generate-version-class</id>
           </execution>
         </executions>
         <groupId>org.codehaus.mojo</groupId>
