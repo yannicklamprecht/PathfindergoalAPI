@@ -14,5 +14,5 @@ class CraftNavigation(private val navigationAbstract: NavigationAbstract, privat
         moveToEntityU = { entity -> navigationAbstract.a((entity as CraftEntity).handle, defaultSpeed) },
         moveToentityB = { entity, speed -> navigationAbstract.a((entity as CraftEntity).handle, speed) },
         speedU = { speed -> navigationAbstract.a(speed) },
-        clearPathEntityU = { navigationAbstract.q() }
+        clearPathEntityU = { navigationAbstract.o() }
 )
