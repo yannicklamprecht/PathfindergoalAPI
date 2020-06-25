@@ -4,7 +4,7 @@
   <parent>
     <artifactId>PathfindergoalAPI</artifactId>
     <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
-    <version>1.152.2-SNAPSHOT</version>
+    <version>1.161.0</version>
   </parent>
 
   <modelVersion>4.0.0</modelVersion>
@@ -48,6 +48,8 @@
       </plugin>
       <plugin>
         <artifactId>dokka-maven-plugin</artifactId>
+        <groupId>org.jetbrains.dokka</groupId>
+        <version>${dokka.version}</version>
         <configuration>
           <outputDir>${project.basedir}/../docs</outputDir>
           <skipDeprecated>true</skipDeprecated>
@@ -62,8 +64,6 @@
             <phase>pre-site</phase>
           </execution>
         </executions>
-        <groupId>org.jetbrains.dokka</groupId>
-        <version>${dokka.version}</version>
       </plugin>
     </plugins>
   </build>
