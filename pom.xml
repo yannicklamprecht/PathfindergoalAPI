@@ -44,6 +44,7 @@
         <module>Pathfinder_1_13_2</module>
         <module>Pathfinder_1_14</module>
         <module>Pathfinder_1_15</module>
+        <module>Pathfinder_1_16</module>
       </modules>
     </profile>
   </profiles>
