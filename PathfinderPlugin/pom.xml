@@ -97,6 +97,13 @@
             <version>${project.parent.version}</version>
         </dependency>
 
+        <dependency>
+            <artifactId>Pathfinder_1_16</artifactId>
+            <groupId>com.github.ysl3000.pathfindergoalapi</groupId>
+            <scope>compile</scope>
+            <version>${project.parent.version}</version>
+        </dependency>
+
 
         <dependency>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
