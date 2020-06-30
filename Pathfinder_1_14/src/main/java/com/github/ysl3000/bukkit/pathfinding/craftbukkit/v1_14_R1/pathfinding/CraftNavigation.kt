@@ -12,5 +12,11 @@ class CraftNavigation(private val navigationAbstract: NavigationAbstract, privat
         moveToEntityU = { entity -> navigationAbstract.a((entity as CraftEntity).handle, defaultSpeed) },
         moveToentityB = { entity, speed -> navigationAbstract.a((entity as CraftEntity).handle, speed) },
         speedU = { speed -> navigationAbstract.a(speed) },
-        clearPathEntityU = { navigationAbstract.q() }
+        clearPathEntityU = navigationAbstract::o,
+        setCanPassDoors = navigationAbstract.q()::a,
+        setCanOpenDoors = navigationAbstract.q()::b,
+        setCanFloat = navigationAbstract.q()::c,
+        canPassDoors = navigationAbstract.q()::c,
+        canOpenDoors = navigationAbstract.q()::d,
+        canFloat = navigationAbstract.q()::e
 )

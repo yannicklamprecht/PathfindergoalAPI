@@ -12,7 +12,14 @@ open class AbstractNavigation(
         private val moveToEntityU: (entity: Entity) -> Unit,
         private val moveToentityB: (entity: Entity, speed: Double) -> Boolean,
         private val speedU: (speed: Double) -> Unit,
-        private val clearPathEntityU: () -> Unit
+        private val clearPathEntityU: () -> Unit,
+        private val setCanPassDoors: (canPassDoors: Boolean) -> Unit,
+        private val setCanOpenDoors: (canOpenDoors: Boolean) -> Unit,
+        private val setCanFloat: (canFloat: Boolean) -> Unit,
+        private val canPassDoors: () -> Boolean,
+        private val canOpenDoors: () -> Boolean,
+        private val canFloat: () -> Boolean
+
 ) : Navigation {
 
     override fun isDoneNavigating(): Boolean = doneNavigating.invoke()
@@ -30,5 +37,17 @@ open class AbstractNavigation(
     override fun setSpeed(speed: Double) = speedU.invoke(speed)
 
     override fun clearPathEntity() = clearPathEntityU.invoke()
+
+    override fun setCanPassDoors(canPassDoors: Boolean) = setCanPassDoors.invoke(canPassDoors)
+
+    override fun setCanOpenDoors(canOpenDoors: Boolean) = setCanOpenDoors.invoke(canOpenDoors)
+
+    override fun setCanFloat(canFloat: Boolean) = setCanFloat.invoke(canFloat)
+
+    override fun canPassDoors(): Boolean = canPassDoors.invoke()
+
+    override fun canOpenDoors(): Boolean = canOpenDoors.invoke()
+
+    override fun canFloat(): Boolean = canFloat.invoke()
 
 }

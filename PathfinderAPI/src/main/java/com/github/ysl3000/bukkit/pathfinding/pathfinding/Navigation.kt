@@ -61,5 +61,17 @@ interface Navigation {
      */
     fun clearPathEntity()
 
+    fun setCanPassDoors(canPassDoors: Boolean)
+
+    fun setCanOpenDoors(canOpenDoors: Boolean)
+
+    fun setCanFloat(canFloat: Boolean)
+
+    fun canPassDoors(): Boolean
+
+    fun canOpenDoors(): Boolean
+
+    fun canFloat(): Boolean
+
 
 }
