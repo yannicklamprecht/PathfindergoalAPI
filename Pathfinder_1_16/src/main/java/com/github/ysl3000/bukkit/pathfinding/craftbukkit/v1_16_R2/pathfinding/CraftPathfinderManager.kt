@@ -1,6 +1,6 @@
-package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.pathfinding
+package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.pathfinding
 
-import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.entity.CraftInsentient
+import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.entity.CraftInsentient
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderManagerMob
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderPlayer

@@ -1,33 +1,34 @@
-package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.entity
+package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.entity
 
-import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.pathfinding.CraftNavigation
-import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.pathfinding.CraftPathfinderGoalWrapper
+import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.pathfinding.CraftNavigation
+import com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.pathfinding.CraftPathfinderGoalWrapper
 import com.github.ysl3000.bukkit.pathfinding.entity.Insentient
 import com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal
-import net.minecraft.server.v1_16_R1.EntityInsentient
-import net.minecraft.server.v1_16_R1.PathfinderGoalSelector
+import net.minecraft.server.v1_16_R2.EntityInsentient
+import net.minecraft.server.v1_16_R2.PathfinderGoalSelector
 import org.bukkit.Location
 import org.bukkit.attribute.Attributable
 import org.bukkit.attribute.Attribute
-import org.bukkit.craftbukkit.v1_16_R1.entity.*
+import org.bukkit.craftbukkit.v1_16_R2.entity.*
 import org.bukkit.entity.*
 import org.bukkit.util.Vector
 import java.lang.reflect.InvocationTargetException
 import java.lang.reflect.Method
-import java.util.HashMap
+import java.util.*
 
 class CraftInsentient private constructor(private val handle: EntityInsentient) : Insentient {
 
 
-    private val nmsGoals = HashMap<PathfinderGoal, net.minecraft.server.v1_16_R1.PathfinderGoal>()
-    private val nmsTargetGoals = HashMap<PathfinderGoal, net.minecraft.server.v1_16_R1.PathfinderGoal>()
+    private val nmsGoals = HashMap<PathfinderGoal, net.minecraft.server.v1_16_R2.PathfinderGoal>()
+    private val nmsTargetGoals = HashMap<PathfinderGoal, net.minecraft.server.v1_16_R2.PathfinderGoal>()
 
     private val navigation: com.github.ysl3000.bukkit.pathfinding.pathfinding.Navigation
 
     constructor(flying: Flying) : this((flying as CraftFlying).handle)
 
     init {
-        this.navigation = CraftNavigation(handle.navigation,handle,(handle.bukkitEntity as Attributable).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)?.value?:0.7)
+        this.navigation = CraftNavigation(handle.navigation, handle, (handle.bukkitEntity as Attributable).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED)?.value
+                ?: 0.7)
     }
 
 
@@ -126,7 +127,10 @@ class CraftInsentient private constructor(private val handle: EntityInsentient) 
 
     override fun hasPositionChanged(): Boolean = handle.positionChanged
 
-    override fun onEntityKill(livingEntity: LivingEntity) = handle.a_((livingEntity as CraftLivingEntity).handle)
+    override fun onEntityKill(livingEntity: LivingEntity) {
+        val nms = (livingEntity as CraftLivingEntity).handle
+        handle.a(nms.world.server.server.getWorldServer(nms.world.dimensionKey), nms)
+    }
 
     override fun getBukkitEntity(): Entity = handle.bukkitEntity
 

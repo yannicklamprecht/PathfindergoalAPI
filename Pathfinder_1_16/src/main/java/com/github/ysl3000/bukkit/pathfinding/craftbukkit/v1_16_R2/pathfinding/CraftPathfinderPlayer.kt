@@ -1,8 +1,8 @@
-package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.pathfinding
+package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.pathfinding
 
 import com.github.ysl3000.bukkit.pathfinding.AbstractPathfinderPlayer
-import net.minecraft.server.v1_16_R1.EntityPlayer
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer
+import net.minecraft.server.v1_16_R2.EntityPlayer
+import org.bukkit.craftbukkit.v1_16_R2.entity.CraftPlayer
 import org.bukkit.entity.Player
 
 class CraftPathfinderPlayer private constructor(ep: EntityPlayer) :
@@ -13,8 +13,8 @@ class CraftPathfinderPlayer private constructor(ep: EntityPlayer) :
                 relativeMotionZ = { ep.mot.z },
                 relativeMotionYaw = { ep.yaw },
                 relativeMotionPitch = { ep.pitch },
-                relativeMotionForward = { ep.az },
-                relativeMotionSideward = { ep.ba },
+                relativeMotionForward = { ep.aR },
+                relativeMotionSideward = { ep.aT },
                 jump = { ep.mot.y > STILL }
         ) {
     constructor(player: Player) : this((player as CraftPlayer).handle)

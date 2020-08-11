@@ -1,6 +1,6 @@
-package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R1.pathfinding
+package com.github.ysl3000.bukkit.pathfinding.craftbukkit.v1_16_R2.pathfinding
 
-import net.minecraft.server.v1_16_R1.PathfinderGoal
+import net.minecraft.server.v1_16_R2.PathfinderGoal
 
 class CraftPathfinderGoalWrapper(
         private val pathfinderGoal: com.github.ysl3000.bukkit.pathfinding.pathfinding.PathfinderGoal) : PathfinderGoal() {
