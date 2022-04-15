@@ -8,7 +8,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <kotlin.version>1.6.20</kotlin.version>
-    <dokka.version>1.6.10</dokka.version>
+    <dokka.version>1.6.20</dokka.version>
   </properties>
 
   <version>1.161.0</version>
