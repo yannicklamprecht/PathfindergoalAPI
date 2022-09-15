@@ -16,7 +16,7 @@
                     </execution>
                 </executions>
                 <groupId>org.apache.maven.plugins</groupId>
-                <version>3.3.0</version>
+                <version>3.4.0</version>
             </plugin>
             <plugin>
                 <artifactId>templating-maven-plugin</artifactId>
