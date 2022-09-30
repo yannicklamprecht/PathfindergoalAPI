@@ -7,7 +7,7 @@
     <spigot.version>1.16.1-R0.1-SNAPSHOT</spigot.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <kotlin.version>1.7.10</kotlin.version>
+    <kotlin.version>1.7.20</kotlin.version>
     <dokka.version>1.7.10</dokka.version>
   </properties>
 
