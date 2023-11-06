@@ -29,7 +29,7 @@
                     </execution>
                 </executions>
                 <groupId>org.codehaus.mojo</groupId>
-                <version>1.0.0</version>
+                <version>3.0.0</version>
             </plugin>
             <plugin>
                 <artifactId>kotlin-maven-plugin</artifactId>
